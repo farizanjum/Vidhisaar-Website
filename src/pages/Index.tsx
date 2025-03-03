@@ -17,7 +17,7 @@ const Index = () => {
       <DemoHeroGeometric />
       <div className="relative z-10 py-8 bg-black">
         <div className="absolute inset-0 bg-black opacity-100"></div>
-        <h2 className="text-center text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-gray-400 via-gray-600 to-gray-400 bg-clip-text text-transparent relative z-10">Key Features</h2>
+        <h2 className="text-center text-2xl md:text-3xl font-bold mb-4 text-white relative z-10">Key Features</h2>
         <TiltedScrollDemo />
       </div>
       <PartnersSection />
