@@ -11,7 +11,7 @@ export function TiltedScrollDemo() {
   ]
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 text-white">
       <TiltedScroll 
         items={customItems}
         className="mt-8"
