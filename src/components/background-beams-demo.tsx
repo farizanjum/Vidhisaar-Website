@@ -18,14 +18,14 @@ function BackgroundBeamsDemo() {
         <p className="text-white/60 max-w-lg mx-auto my-4 text-sm md:text-base text-center relative z-10">
           AI-driven legal assistant that helps users understand legal concepts, analyze case laws, and provide legal reasoning through an advanced LLM-based system.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mt-6 z-10">
+        <div className="flex flex-col items-center justify-center mt-6 z-10">
           <Input
             type="email"
             placeholder="your@email.com"
-            className="w-full max-w-xs z-10"
+            className="w-full max-w-md z-10 mb-4"
           />
           <HoverButton 
-            className="text-white w-full sm:w-auto mt-2 sm:mt-0"
+            className="text-white w-full max-w-md"
             style={{
               "--circle-start": "#6344F5",
               "--circle-end": "#18CCFC",
