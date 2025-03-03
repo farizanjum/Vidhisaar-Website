@@ -1,6 +1,7 @@
 
 import { DemoHeroGeometric } from "@/components/demo-hero-geometric";
 import { BackgroundBeamsDemo } from "@/components/background-beams-demo";
+import { TiltedScrollDemo } from "@/components/tilted-scroll-demo";
 
 const Index = () => {
   return (
@@ -13,6 +14,10 @@ const Index = () => {
         />
       </div>
       <DemoHeroGeometric />
+      <div className="relative z-10 py-8">
+        <h2 className="text-center text-2xl md:text-3xl font-bold mb-4 text-white">Key Features</h2>
+        <TiltedScrollDemo />
+      </div>
       <BackgroundBeamsDemo />
     </div>
   );

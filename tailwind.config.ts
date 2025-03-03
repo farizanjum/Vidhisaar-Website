@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -119,7 +118,15 @@ export default {
 				'scale-out': {
 					from: { transform: 'scale(1)', opacity: '1' },
 					to: { transform: 'scale(0.95)', opacity: '0' }
-				}
+				},
+				'skew-scroll': {
+					'0%': {
+						transform: 'rotateX(20deg) rotateZ(-20deg) skewX(20deg)',
+					},
+					'100%': {
+						transform: 'rotateX(20deg) rotateZ(-20deg) skewX(20deg) translateY(-100%)',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -127,7 +134,8 @@ export default {
 				'fade-in': 'fade-in 0.3s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out',
 				'scale-in': 'scale-in 0.2s ease-out',
-				'scale-out': 'scale-out 0.2s ease-out'
+				'scale-out': 'scale-out 0.2s ease-out',
+				'skew-scroll': 'skew-scroll 20s linear infinite',
 			}
 		}
 	},
