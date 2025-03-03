@@ -1,7 +1,5 @@
 
 import React from "react";
-import { BorderBeam } from "@/components/ui/border-beam";
-import { Sparkles } from "@/components/ui/sparkles";
 import { useTheme } from "next-themes";
 
 export function PartnersSection() {
@@ -20,7 +18,6 @@ export function PartnersSection() {
                 alt="Partner Logo" 
                 className="w-full h-auto object-contain"
               />
-              <BorderBeam size={200} duration={15} delay={3} />
             </div>
             
             <div className="relative w-full max-w-[300px] aspect-auto">
@@ -29,27 +26,14 @@ export function PartnersSection() {
                 alt="Partner Logo" 
                 className="w-full h-auto object-contain"
               />
-              <BorderBeam 
-                size={200} 
-                duration={15} 
-                delay={6}
-                colorFrom="#4f46e5"
-                colorTo="#8b5cf6" 
-              />
             </div>
           </div>
         </div>
       </div>
       
-      <div className="relative -mt-12 h-64 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
+      <div className="relative -mt-12 h-64 w-full overflow-hidden">
         <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#8350e8,transparent_70%)] before:opacity-40" />
         <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] z-10 w-[200%] rounded-[100%] border-t border-zinc-900/20 dark:border-white/20 bg-black" />
-        <Sparkles
-          density={1200}
-          className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
-          color={theme === "dark" ? "#ffffff" : "#ffffff"}
-          background="transparent"
-        />
       </div>
     </div>
   );

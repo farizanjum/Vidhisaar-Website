@@ -4,6 +4,7 @@
 import { useEffect, useId, useState } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
+import type { RecursivePartial, IOptions } from "@tsparticles/engine"
 
 export function Sparkles({
   className,
@@ -31,7 +32,7 @@ export function Sparkles({
 
   const id = useId()
 
-  const defaultOptions = {
+  const defaultOptions: RecursivePartial<IOptions> = {
     background: {
       color: {
         value: background,
@@ -48,7 +49,7 @@ export function Sparkles({
       },
       move: {
         enable: true,
-        direction: "none",
+        direction: "none" as any,
         speed: {
           min: minSpeed || speed / 10,
           max: speed,
