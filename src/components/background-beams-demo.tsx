@@ -29,7 +29,7 @@ function BackgroundBeamsDemo() {
             style={{
               "--circle-start": "#6344F5",
               "--circle-end": "#18CCFC",
-            }}
+            } as React.CSSProperties}
           >
             Join Waitlist Now
           </HoverButton>
