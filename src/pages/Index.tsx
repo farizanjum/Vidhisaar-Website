@@ -14,8 +14,9 @@ const Index = () => {
         />
       </div>
       <DemoHeroGeometric />
-      <div className="relative z-10 py-8">
-        <h2 className="text-center text-2xl md:text-3xl font-bold mb-4 text-white">Key Features</h2>
+      <div className="relative z-10 py-8 bg-black bg-opacity-80 backdrop-blur-sm">
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 opacity-50"></div>
+        <h2 className="text-center text-2xl md:text-3xl font-bold mb-4 text-white relative z-10">Key Features</h2>
         <TiltedScrollDemo />
       </div>
       <BackgroundBeamsDemo />
