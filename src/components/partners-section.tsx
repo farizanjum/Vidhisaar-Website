@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useTheme } from "next-themes";
 import { Sparkles } from "@/components/ui/sparkles";
@@ -8,26 +7,25 @@ export function PartnersSection() {
   
   return (
     <div className="relative flex flex-col items-center justify-center py-16 overflow-hidden bg-black text-white">
-      <h2 className="text-center text-2xl md:text-3xl font-bold mb-8 text-white relative z-10">Our Partners</h2>
+      <h2 className="text-center text-2xl md:text-3xl font-bold mb-2 text-white relative z-10">Trusted by Experts</h2>
+      <p className="text-center text-lg mb-8 text-white/80 relative z-10">Used by the leaders</p>
       
       <div className="relative flex flex-col items-center justify-center w-full max-w-4xl mx-auto">
-        <div className="relative p-6 rounded-lg bg-zinc-900/50 border border-zinc-800 shadow-xl">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <div className="relative w-full max-w-[300px] aspect-auto">
-              <img 
-                src="https://i.imgur.com/KLG1rBA.png" 
-                alt="Partner Logo" 
-                className="w-full h-auto object-contain"
-              />
-            </div>
-            
-            <div className="relative w-full max-w-[300px] aspect-auto">
-              <img 
-                src="https://i.imgur.com/7ozyayR.png" 
-                alt="Partner Logo" 
-                className="w-full h-auto object-contain"
-              />
-            </div>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+          <div className="relative w-full max-w-[200px] aspect-auto">
+            <img 
+              src="https://i.imgur.com/KLG1rBA.png" 
+              alt="Partner Logo" 
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          
+          <div className="relative w-full max-w-[200px] aspect-auto">
+            <img 
+              src="https://i.imgur.com/7ozyayR.png" 
+              alt="Partner Logo" 
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </div>
