@@ -2,6 +2,7 @@
 import { DemoHeroGeometric } from "@/components/demo-hero-geometric";
 import { BackgroundBeamsDemo } from "@/components/background-beams-demo";
 import { TiltedScrollDemo } from "@/components/tilted-scroll-demo";
+import { PartnersSection } from "@/components/partners-section";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <h2 className="text-center text-2xl md:text-3xl font-bold mb-4 text-white relative z-10">Key Features</h2>
         <TiltedScrollDemo />
       </div>
+      <PartnersSection />
       <BackgroundBeamsDemo />
     </div>
   );
