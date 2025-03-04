@@ -61,7 +61,7 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
             "linear-gradient(-75deg,rgba(0,0,0,1) calc(var(--x) + 20%),rgba(0,0,0,0.5) calc(var(--x) + 30%),rgba(0,0,0,1) calc(var(--x) + 100%))",
         } as any}
       >
-        JOIN WAITLIST NOW
+        {children}
       </span>
       <span
         style={{
