@@ -46,7 +46,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <div className="relative w-full max-w-4xl mx-auto py-16 z-10">
+    <div className="relative w-full max-w-4xl mx-auto py-16 z-10 faq-section">
       <h2 className="text-center text-2xl md:text-3xl font-bold mb-8 text-white">FAQs</h2>
       <Accordion type="single" collapsible className="w-full bg-black/50 backdrop-blur-sm" defaultValue="1">
         {faqs.map((faq) => (

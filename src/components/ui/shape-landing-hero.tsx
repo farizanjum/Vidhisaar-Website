@@ -1,11 +1,11 @@
-
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Circle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-
+import { ShinyButton } from "@/components/ui/shiny-button";
+import { Typewriter } from "@/components/ui/typewriter-text";
 
 function ElegantShape({
     className,
@@ -95,6 +95,13 @@ function HeroGeometric({
         }),
     };
 
+    const scrollToFAQs = () => {
+        const faqSection = document.querySelector(".faq-section");
+        if (faqSection) {
+            faqSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
@@ -169,7 +176,7 @@ function HeroGeometric({
                     >
                         <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                {title1}
+                                Revolutionizing AI Legal Assistant,
                             </span>
                             <br />
                             <span
@@ -177,7 +184,7 @@ function HeroGeometric({
                                     "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
                                 )}
                             >
-                                {title2}
+                                That you can Trust
                             </span>
                         </h1>
                     </motion.div>
@@ -189,8 +196,30 @@ function HeroGeometric({
                         animate="visible"
                     >
                         <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
-                            Crafting exceptional digital experiences through
-                            innovative design and cutting-edge technology.
+                            Vidhisaar leverages multi-agent intelligence, blockchain, and explainable AI to provide transparent, unbiased, and verifiable legal insights—helping you make informed legal decisions with confidence.
+                        </p>
+                    </motion.div>
+
+                    <motion.div
+                        custom={3}
+                        variants={fadeUpVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="flex flex-col items-center gap-4"
+                    >
+                        <ShinyButton 
+                            onClick={scrollToFAQs}
+                            className="px-8 py-3 text-white bg-indigo-500/20 hover:bg-indigo-500/30"
+                        >
+                            Get Early Access
+                        </ShinyButton>
+                        
+                        <p className="text-white/40 text-sm">
+                            <Typewriter
+                                text="1,000+ legal experts/ Enthusiast waiting for launch"
+                                speed={50}
+                                className="text-white/60"
+                            />
                         </p>
                     </motion.div>
                 </div>
