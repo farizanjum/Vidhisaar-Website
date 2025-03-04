@@ -81,7 +81,7 @@ export function Typewriter({
     <>
       {shiny ? (
         <motion.span
-          className={cn(className, "relative inline-block")}
+          className={cn(className, "relative inline-block text-center")}
           initial={{ "--x": "100%" as any }}
           animate={{ "--x": "-100%" as any }}
           transition={{
@@ -99,7 +99,7 @@ export function Typewriter({
           <span className="animate-pulse">{cursor}</span>
         </motion.span>
       ) : (
-        <span className={className}>
+        <span className={cn(className, "text-center block mx-auto")}>
           {displayText}
           <span className="animate-pulse">{cursor}</span>
         </span>

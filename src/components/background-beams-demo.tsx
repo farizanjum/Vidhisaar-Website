@@ -9,14 +9,14 @@ import { Typewriter } from "@/components/ui/typewriter-text";
 function BackgroundBeamsDemo() {
   const [counter, setCounter] = useState(56);
 
-  // Simulate counter increasing occasionally
+  // Modified to increase counter much more slowly (roughly once per hour)
   useEffect(() => {
     const interval = setInterval(() => {
-      // 30% chance to increase counter
-      if (Math.random() < 0.3) {
+      // 2% chance to increase counter (roughly once per hour if checked every 5 minutes)
+      if (Math.random() < 0.02) {
         setCounter(prev => prev + 1);
       }
-    }, 5000);
+    }, 300000); // Check every 5 minutes
     
     return () => clearInterval(interval);
   }, []);
@@ -29,10 +29,10 @@ function BackgroundBeamsDemo() {
         <h1 className="relative z-10 text-lg md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-center font-sans font-bold">
           Exclusive Early Access
         </h1>
-        <h2 className="relative z-10 text-base md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-6">
+        <h2 className="relative z-10 text-base md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-3">
           Limited Spots Available!
         </h2>
-        <div className="mt-8 mb-10">
+        <div className="mt-8 mb-10 flex justify-center">
           <Typewriter 
             text="Spots are filling fast. Join now before the waitlist closes!" 
             className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10"
@@ -56,7 +56,7 @@ function BackgroundBeamsDemo() {
             Join Waitlist Now
           </HoverButton>
           
-          <div className="mt-10 text-center">
+          <div className="mt-6 text-center">
             <p className="text-white/60 text-sm md:text-base relative z-10 animate-pulse">
               <span className="font-semibold text-white/80">{counter}</span> users already signed up – Don't Miss Out!
             </p>
