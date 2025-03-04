@@ -4,6 +4,7 @@ import { BackgroundBeamsDemo } from "@/components/background-beams-demo";
 import { TiltedScrollDemo } from "@/components/tilted-scroll-demo";
 import { PartnersSection } from "@/components/partners-section";
 import { FAQSection } from "@/components/faq-section";
+import { WaitlistSection } from "@/components/waitlist-section";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
       </div>
       <PartnersSection />
       <FAQSection />
+      <WaitlistSection />
       <BackgroundBeamsDemo />
     </div>
   );

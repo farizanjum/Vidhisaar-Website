@@ -3,7 +3,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-
 import { cn } from "@/lib/utils";
 
 interface ShinyButtonProps
@@ -19,8 +18,8 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
 }) => {
   return (
     <motion.button
-      initial={{ "--x": "100%", scale: 0.8 } as any}
-      animate={{ "--x": "-100%", scale: 1 } as any}
+      initial={{ "--x": "100%" as any, scale: 0.8 }}
+      animate={{ "--x": "-100%" as any, scale: 1 }}
       whileTap={{ scale: 0.95 }}
       transition={{
         repeat: Infinity,
@@ -48,7 +47,7 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
         style={{
           maskImage:
             "linear-gradient(-75deg,hsl(var(--primary)) calc(var(--x) + 20%),transparent calc(var(--x) + 30%),hsl(var(--primary)) calc(var(--x) + 100%))",
-        }}
+        } as any}
       >
         {children}
       </span>
@@ -56,7 +55,7 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
         style={{
           mask: "linear-gradient(rgb(0,0,0), rgb(0,0,0)) content-box,linear-gradient(rgb(0,0,0), rgb(0,0,0))",
           maskComposite: "exclude",
-        }}
+        } as any}
         className="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,hsl(var(--primary)/10%)_calc(var(--x)+20%),hsl(var(--primary)/50%)_calc(var(--x)+25%),hsl(var(--primary)/10%)_calc(var(--x)+100%))] p-px"
       ></span>
     </motion.button>

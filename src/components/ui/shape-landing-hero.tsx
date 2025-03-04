@@ -96,10 +96,10 @@ function HeroGeometric({
         }),
     };
 
-    const scrollToFAQs = () => {
-        const faqSection = document.querySelector(".faq-section");
-        if (faqSection) {
-            faqSection.scrollIntoView({ behavior: "smooth" });
+    const scrollToWaitlist = () => {
+        const waitlistSection = document.getElementById("waitlist");
+        if (waitlistSection) {
+            waitlistSection.scrollIntoView({ behavior: "smooth" });
         }
     };
 
@@ -209,10 +209,10 @@ function HeroGeometric({
                         className="flex flex-col items-center gap-4"
                     >
                         <ShinyButton 
-                            onClick={scrollToFAQs}
+                            onClick={scrollToWaitlist}
                             className="px-8 py-3 text-white bg-indigo-500/20 hover:bg-indigo-500/30"
                         >
-                            Get Early Access
+                            Join the Waitlist
                         </ShinyButton>
                         
                         <p className="text-white/40 text-sm">
