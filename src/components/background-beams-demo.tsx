@@ -29,10 +29,10 @@ function BackgroundBeamsDemo() {
         <h1 className="relative z-10 text-lg md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-center font-sans font-bold">
           Exclusive Early Access
         </h1>
-        <h2 className="relative z-10 text-base md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-2">
+        <h2 className="relative z-10 text-base md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-6">
           Limited Spots Available!
         </h2>
-        <div className="mt-4 mb-6">
+        <div className="mt-8 mb-10">
           <Typewriter 
             text="Spots are filling fast. Join now before the waitlist closes!" 
             className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10"
@@ -40,11 +40,11 @@ function BackgroundBeamsDemo() {
             loop={false}
           />
         </div>
-        <div className="flex flex-col items-center justify-center mt-6 z-10">
+        <div className="flex flex-col items-center justify-center mt-10 z-10">
           <Input
             type="email"
             placeholder="your@email.com"
-            className="w-full max-w-md z-10 mb-4"
+            className="w-full max-w-md z-10 mb-6"
           />
           <HoverButton 
             className="text-white w-full max-w-md"
@@ -56,7 +56,7 @@ function BackgroundBeamsDemo() {
             Join Waitlist Now
           </HoverButton>
           
-          <div className="mt-6 text-center">
+          <div className="mt-10 text-center">
             <p className="text-white/60 text-sm md:text-base relative z-10 animate-pulse">
               <span className="font-semibold text-white/80">{counter}</span> users already signed up – Don't Miss Out!
             </p>
