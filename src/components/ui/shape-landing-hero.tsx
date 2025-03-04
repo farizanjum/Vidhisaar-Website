@@ -120,7 +120,7 @@ function HeroGeometric({
                     </motion.div>
 
                     <motion.div custom={2} variants={fadeUpVariants} initial="hidden" animate="visible">
-                        <p className="text-sm sm:text-base mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4 text-zinc-400 md:text-base">
+                        <p className="text-sm sm:text-base mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4 text-zinc-200 md:text-base">
                             Vidhisaar leverages multi-agent intelligence, blockchain, and explainable AI to provide transparent, unbiased, and verifiable legal insights—helping you make informed legal decisions with confidence.
                         </p>
                     </motion.div>
