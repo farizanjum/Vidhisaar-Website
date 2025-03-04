@@ -109,7 +109,7 @@ function HeroGeometric({
 
                     <motion.div custom={1} variants={fadeUpVariants} initial="hidden" animate="visible">
                         <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 tracking-tight">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-7xl">
                                 {title1}
                             </span>
                             <br />
