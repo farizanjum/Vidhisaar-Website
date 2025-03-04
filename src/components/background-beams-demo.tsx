@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState, useEffect } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -53,13 +54,20 @@ function BackgroundBeamsDemo() {
     setIsSubmitting(true);
 
     try {
-      // Use Supabase functions.invoke to call the edge function
-      const { data, error } = await supabase.functions.invoke('send-otp', {
-        body: { email }
+      // Direct fetch to avoid API key issues
+      const response = await fetch(`${supabase.functions.url}/send-otp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || supabase.auth.session()?.access_token}`,
+        },
+        body: JSON.stringify({ email }),
       });
 
-      if (error) {
-        throw new Error(error.message || 'Failed to send verification code');
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send verification code');
       }
 
       setOtpSent(true);
@@ -92,13 +100,20 @@ function BackgroundBeamsDemo() {
     setVerifying(true);
 
     try {
-      // Use Supabase functions.invoke to call the edge function
-      const { data, error } = await supabase.functions.invoke('verify-otp', {
-        body: { email, otp }
+      // Direct fetch to avoid API key issues
+      const response = await fetch(`${supabase.functions.url}/verify-otp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || supabase.auth.session()?.access_token}`,
+        },
+        body: JSON.stringify({ email, otp }),
       });
 
-      if (error) {
-        throw new Error(error.message || 'Failed to verify code');
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to verify code');
       }
 
       // Reset form
