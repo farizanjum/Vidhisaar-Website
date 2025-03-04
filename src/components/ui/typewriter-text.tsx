@@ -77,6 +77,7 @@ export function Typewriter({
     textArrayIndex,
   ]);
  
+  // Apply typing animation to both shiny and regular text
   return (
     <>
       {shiny ? (
