@@ -80,12 +80,21 @@ export default {
             "offset-distance": "100%",
           },
         },
+        "text-shine": {
+          "0%": {
+            backgroundPosition: "200% center",
+          },
+          "100%": {
+            backgroundPosition: "-200% center",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "skew-scroll": "skew-scroll 20s linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        "text-shine": "text-shine 3s ease-in-out infinite",
       },
     },
   },
