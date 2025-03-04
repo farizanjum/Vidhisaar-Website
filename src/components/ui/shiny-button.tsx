@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -17,15 +16,31 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
   ...props
 }) => {
   const scrollToWaitlist = () => {
-    // Get the background beams demo section
-    const backgroundBeamsSection = document.querySelector(".h-\\[40rem\\].w-full.rounded-md.bg-\\[\\#030303\\]");
+    // First try to find the BackgroundBeamsDemo section directly using its data attribute
+    const waitlistSection = document.querySelector(".h-\\[40rem\\].w-full.rounded-md.bg-\\[\\#030303\\]");
     
-    if (backgroundBeamsSection) {
-      backgroundBeamsSection.scrollIntoView({
-        behavior: "smooth"
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
       });
+      console.log("Scrolling to waitlist section");
     } else {
-      console.log("Background beams section not found");
+      // Fallback: find by the first h1 with "Vidhisaar" text
+      const vidhisaarHeadings = Array.from(document.querySelectorAll('h1')).filter(
+        h => h.textContent?.includes('Vidhisaar')
+      );
+      
+      // Use the second heading (most likely the one in the waitlist section)
+      if (vidhisaarHeadings.length > 1) {
+        vidhisaarHeadings[1].scrollIntoView({ 
+          behavior: "smooth",
+          block: "start" 
+        });
+        console.log("Scrolling to Vidhisaar heading");
+      } else {
+        console.log("Could not find waitlist section");
+      }
     }
   };
 
@@ -63,6 +78,7 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
       >
         {children}
       </span>
+      
       <span
         style={{
           mask: "linear-gradient(#000, #000) padding-box, linear-gradient(#000, #000) border-box",
@@ -72,7 +88,6 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
       ></span>
       <span className="absolute inset-0 z-5 rounded-[inherit] bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.4)_0%,transparent_70%)] opacity-40 blur-[55px]"></span>
       
-      {/* Animated border */}
       <motion.span 
         className="absolute inset-0 z-0 rounded-lg border border-white/30"
         initial={{ opacity: 0.3 }}

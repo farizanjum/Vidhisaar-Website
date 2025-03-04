@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
@@ -7,6 +6,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Typewriter } from "@/components/ui/typewriter-text";
+
 function ElegantShape({
   className,
   delay = 0,
@@ -52,6 +52,7 @@ function ElegantShape({
             </motion.div>
         </motion.div>;
 }
+
 function HeroGeometric({
   badge = "Design Collective",
   title1 = "Elevate Your Digital Vision",
@@ -76,6 +77,7 @@ function HeroGeometric({
       }
     })
   };
+  
   const scrollToWaitlist = () => {
     const waitlistSection = document.getElementById("waitlist");
     if (waitlistSection) {
@@ -84,6 +86,7 @@ function HeroGeometric({
       });
     }
   };
+  
   return <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#030303]">
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
@@ -141,4 +144,5 @@ function HeroGeometric({
             <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
         </div>;
 }
+
 export { HeroGeometric };
