@@ -6,7 +6,7 @@ function DemoHeroGeometric() {
         <HeroGeometric
             badge="Vidhisaar"
             title1="AI Legal Assistant,"
-            title2="That you can Trust"
+            title2="You can Trust"
         />
     );
 }
