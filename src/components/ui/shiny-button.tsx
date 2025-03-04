@@ -51,12 +51,12 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
       </span>
       <span
         style={{
-          mask: "linear-gradient(#fff, #fff) padding-box, linear-gradient(#fff, #fff) border-box",
+          mask: "linear-gradient(#000, #000) padding-box, linear-gradient(#000, #000) border-box",
           maskComposite: "exclude",
         } as any}
-        className="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,rgba(255,255,255,0.2)_calc(var(--x)+20%),rgba(255,255,255,0.4)_calc(var(--x)+25%),rgba(255,255,255,0.2)_calc(var(--x)+100%))] border border-white/10 p-px"
+        className="absolute inset-0 z-10 block rounded-[inherit] bg-[linear-gradient(-75deg,rgba(0,0,0,0.2)_calc(var(--x)+20%),rgba(0,0,0,0.4)_calc(var(--x)+25%),rgba(0,0,0,0.2)_calc(var(--x)+100%))] border border-black/10 p-px"
       ></span>
-      <span className="absolute inset-0 z-5 rounded-[inherit] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.4)_0%,transparent_70%)] opacity-40 blur-[55px]"></span>
+      <span className="absolute inset-0 z-5 rounded-[inherit] bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.4)_0%,transparent_70%)] opacity-40 blur-[55px]"></span>
     </motion.button>
   );
 };
