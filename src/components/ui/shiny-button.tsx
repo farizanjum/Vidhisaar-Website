@@ -16,6 +16,15 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
   className,
   ...props
 }) => {
+  const scrollToWaitlist = () => {
+    const waitlistSection = document.getElementById("waitlist");
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <motion.button
       initial={{ "--x": "100%" as any, scale: 0.8 }}
@@ -34,9 +43,10 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
           mass: 0.5,
         },
       }}
+      onClick={scrollToWaitlist}
       {...props as any}
       className={cn(
-        "relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow bg-black hover:bg-black/90",
+        "relative rounded-lg px-6 py-2 font-medium backdrop-blur-xl transition-shadow duration-300 ease-in-out hover:shadow bg-gradient-to-br from-black/90 to-black hover:from-black/80 hover:to-black",
         className
       )}
     >
