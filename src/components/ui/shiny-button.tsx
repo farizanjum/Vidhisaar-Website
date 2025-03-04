@@ -17,13 +17,15 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
   ...props
 }) => {
   const scrollToWaitlist = () => {
-    const waitlistSection = document.getElementById("waitlist");
-    if (waitlistSection) {
-      waitlistSection.scrollIntoView({
+    // Get the background beams demo section
+    const backgroundBeamsSection = document.querySelector(".h-\\[40rem\\].w-full.rounded-md.bg-\\[\\#030303\\]");
+    
+    if (backgroundBeamsSection) {
+      backgroundBeamsSection.scrollIntoView({
         behavior: "smooth"
       });
     } else {
-      console.log("Waitlist section not found");
+      console.log("Background beams section not found");
     }
   };
 
