@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
@@ -174,9 +175,9 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
+                        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-6 md:mb-8 tracking-tight">
                             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                Revolutionizing AI Legal Assistant,
+                                {title1}
                             </span>
                             <br />
                             <span
@@ -184,7 +185,7 @@ function HeroGeometric({
                                     "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
                                 )}
                             >
-                                That you can Trust
+                                {title2}
                             </span>
                         </h1>
                     </motion.div>
@@ -195,7 +196,7 @@ function HeroGeometric({
                         initial="hidden"
                         animate="visible"
                     >
-                        <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
+                        <p className="text-sm sm:text-base md:text-lg text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4">
                             Vidhisaar leverages multi-agent intelligence, blockchain, and explainable AI to provide transparent, unbiased, and verifiable legal insights—helping you make informed legal decisions with confidence.
                         </p>
                     </motion.div>
