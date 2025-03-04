@@ -37,7 +37,7 @@ function BackgroundBeamsDemo() {
             text="Spots are filling fast. Join now before the waitlist closes!" 
             className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10"
             speed={50}
-            loop={false}
+            loop={true}
           />
         </div>
         <div className="flex flex-col items-center justify-center mt-8 md:mt-10 z-10">
