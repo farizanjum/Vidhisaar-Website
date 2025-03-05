@@ -7,7 +7,6 @@ import { HoverButton } from "@/components/ui/hover-button";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Typewriter } from "@/components/ui/typewriter";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 function BackgroundBeamsDemo() {
   const [counter, setCounter] = useState(56);
@@ -17,7 +16,6 @@ function BackgroundBeamsDemo() {
   const [otp, setOtp] = useState("");
   const [verifying, setVerifying] = useState(false);
   const { toast } = useToast();
-  const isMobile = useIsMobile();
 
   // Modified to increase counter much more slowly (roughly once per hour)
   useEffect(() => {
@@ -143,17 +141,13 @@ function BackgroundBeamsDemo() {
         </h2>
         <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
           <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
-            {!isMobile ? (
-              <Typewriter 
-                text="Spots are filling fast. Join now before the waitlist closes!" 
-                speed={50}
-                loop={true}
-                waitTime={2000}
-                className="inline-block"
-              />
-            ) : (
-              <span>Spots are filling fast. Join now before the waitlist closes!</span>
-            )}
+            <Typewriter 
+              text="Spots are filling fast. Join now before the waitlist closes!" 
+              speed={50}
+              loop={true}
+              waitTime={2000}
+              className="inline-block"
+            />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center mt-8 md:mt-10 z-10">
@@ -222,17 +216,7 @@ function BackgroundBeamsDemo() {
           
           <div className="mt-4 md:mt-6 text-center">
             <p className="text-white/60 text-xs md:text-base relative z-10 animate-pulse">
-              <span className="font-semibold text-white/80">{counter}</span> users already signed up – 
-              {!isMobile ? (
-                <Typewriter 
-                  text="Don't Miss Out!" 
-                  speed={50}
-                  loop={true}
-                  className="inline-block ml-1"
-                />
-              ) : (
-                <span>Don't Miss Out!</span>
-              )}
+              <span className="font-semibold text-white/80">{counter}</span> users already signed up – Don't Miss Out!
             </p>
           </div>
         </div>
