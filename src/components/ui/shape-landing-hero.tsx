@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
@@ -5,7 +6,7 @@ import { Circle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ShinyButton } from "@/components/ui/shiny-button";
-import { Typewriter } from "@/components/ui/typewriter-text";
+import { Typewriter } from "@/components/ui/typewriter";
 
 function ElegantShape({
   className,
@@ -118,7 +119,15 @@ function HeroGeometric({
                             </span>
                             <br />
                             <span className={cn("bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-5xl md:text-7xl")}>
-                                {title2}
+                                You can <Typewriter 
+                                  text={["Trust", "Govern", "Advocate", "Control", "Own"]} 
+                                  speed={70}
+                                  waitTime={1500}
+                                  deleteSpeed={40}
+                                  className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300"
+                                  cursorChar="|"
+                                  cursorClassName="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 ml-1"
+                                />
                             </span>
                         </h1>
                     </motion.div>
