@@ -1,3 +1,4 @@
+<lov-codelov-code>
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
@@ -157,7 +158,12 @@ function HeroGeometric({
                         </ShinyButton>
                         
                         <p className="text-white/40 text-xs sm:text-sm">
-                            <Typewriter text="1,000+ legal experts/ Enthusiast waiting for launch" speed={50} className="text-white/60" />
+                            <Typewriter 
+                                text="1,000+ legal experts/ Enthusiast waiting for launch" 
+                                speed={50} 
+                                className="text-white/60" 
+                                loop={true} 
+                            />
                         </p>
                     </motion.div>
                 </div>
@@ -168,3 +174,4 @@ function HeroGeometric({
 }
 
 export { HeroGeometric };
+</lov-code>
