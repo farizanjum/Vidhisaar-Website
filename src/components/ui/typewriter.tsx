@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, memo } from "react"
 import { motion, Variants } from "framer-motion"
 
 import { cn } from "@/lib/utils"
@@ -22,7 +22,7 @@ interface TypewriterProps {
   cursorClassName?: string
 }
 
-const Typewriter = ({
+const Typewriter = memo(({
   text,
   speed = 50,
   initialDelay = 0,
@@ -55,6 +55,8 @@ const Typewriter = ({
   const texts = Array.isArray(text) ? text : [text]
 
   useEffect(() => {
+    if (!texts[currentTextIndex]) return
+
     let timeout: NodeJS.Timeout
 
     const currentText = texts[currentTextIndex]
@@ -108,16 +110,18 @@ const Typewriter = ({
     loop,
   ])
 
+  // Add will-change to optimize animation performance
   return (
-    <div className={`inline whitespace-pre-wrap tracking-tight ${className}`}>
+    <div className={`inline whitespace-pre-wrap tracking-tight will-change-contents ${className}`}>
       <span>{displayText}</span>
       {showCursor && (
         <motion.span
           variants={cursorAnimationVariants}
           className={cn(
             cursorClassName,
+            "will-change-opacity",
             hideCursorOnType &&
-              (currentIndex < texts[currentTextIndex].length || isDeleting)
+              (currentIndex < texts[currentTextIndex]?.length || isDeleting)
               ? "hidden"
               : ""
           )}
@@ -129,6 +133,8 @@ const Typewriter = ({
       )}
     </div>
   )
-}
+})
+
+Typewriter.displayName = "Typewriter"
 
 export { Typewriter }
