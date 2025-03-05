@@ -176,7 +176,7 @@ function HeroGeometric({
               text="1,000+ legal experts/ Enthusiast waiting for launch" 
               speed={50} 
               className="text-white/60 inline-block" 
-              loop={true} 
+              loop={true}
             />
           </div>
         </motion.div>
