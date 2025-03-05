@@ -28,7 +28,7 @@ const Typewriter = ({
   initialDelay = 0,
   waitTime = 2000,
   deleteSpeed = 30,
-  loop = true,
+  loop = false, // Default was false, we'll keep this as is since it's explicitly set in usage
   className,
   showCursor = true,
   hideCursorOnType = false,
@@ -63,7 +63,9 @@ const Typewriter = ({
       if (isDeleting) {
         if (displayText === "") {
           setIsDeleting(false)
+          // Always check loop setting and move to next text index
           if (currentTextIndex === texts.length - 1 && !loop) {
+            // Only stop if loop is false and we're at the end
             return
           }
           setCurrentTextIndex((prev) => (prev + 1) % texts.length)
@@ -80,7 +82,8 @@ const Typewriter = ({
             setDisplayText((prev) => prev + currentText[currentIndex])
             setCurrentIndex((prev) => prev + 1)
           }, speed)
-        } else if (texts.length > 1) {
+        } else if (loop || texts.length > 1) {
+          // Always set to delete after wait time if loop is true or multiple texts
           timeout = setTimeout(() => {
             setIsDeleting(true)
           }, waitTime)
@@ -106,6 +109,7 @@ const Typewriter = ({
     texts,
     currentTextIndex,
     loop,
+    initialDelay,
   ])
 
   return (
