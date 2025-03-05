@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Input } from "@/components/ui/input";
 import { HoverButton } from "@/components/ui/hover-button";
-import { Typewriter } from "@/components/ui/typewriter-text";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
@@ -139,12 +138,9 @@ function BackgroundBeamsDemo() {
           Limited Spots Available!
         </h2>
         <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
-          <Typewriter 
-            text="Spots are filling fast. Join now before the waitlist closes!" 
-            className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10"
-            speed={50}
-            loop={true}
-          />
+          <p className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
+            Spots are filling fast. Join now before the waitlist closes!
+          </p>
         </div>
         <div className="flex flex-col items-center justify-center mt-8 md:mt-10 z-10">
           {!otpSent ? (
