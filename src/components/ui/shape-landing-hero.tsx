@@ -151,6 +151,7 @@ function HeroGeometric({
                   speed={70}
                   waitTime={1500}
                   deleteSpeed={40}
+                  loop={true}
                   className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 inline"
                   cursorChar="|"
                   cursorClassName="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 ml-1"
