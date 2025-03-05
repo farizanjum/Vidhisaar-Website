@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState, useEffect } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -5,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { HoverButton } from "@/components/ui/hover-button";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { Typewriter } from "@/components/ui/typewriter";
 
 function BackgroundBeamsDemo() {
   const [counter, setCounter] = useState(56);
@@ -138,9 +140,15 @@ function BackgroundBeamsDemo() {
           Limited Spots Available!
         </h2>
         <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
-          <p className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
-            Spots are filling fast. Join now before the waitlist closes!
-          </p>
+          <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
+            <Typewriter 
+              text="Spots are filling fast. Join now before the waitlist closes!" 
+              speed={50}
+              loop={true}
+              waitTime={2000}
+              className="inline-block"
+            />
+          </div>
         </div>
         <div className="flex flex-col items-center justify-center mt-8 md:mt-10 z-10">
           {!otpSent ? (
