@@ -5,12 +5,6 @@ import { TiltedScrollDemo } from "@/components/tilted-scroll-demo";
 import { PartnersSection } from "@/components/partners-section";
 import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
-import { lazy, Suspense } from "react";
-
-// Use lazy loading for non-critical sections to improve initial load performance
-const LazyBackgroundBeamsDemo = lazy(() => import("@/components/background-beams-demo").then(mod => ({ default: mod.BackgroundBeamsDemo })));
-const LazyPartnersSection = lazy(() => import("@/components/partners-section").then(mod => ({ default: mod.PartnersSection })));
-const LazyFAQSection = lazy(() => import("@/components/faq-section").then(mod => ({ default: mod.FAQSection })));
 
 const Index = () => {
   return (
@@ -20,7 +14,6 @@ const Index = () => {
           src="https://i.imgur.com/O1msyDo.png" 
           alt="Vidhisaar Logo" 
           className="w-24 sm:w-32 h-auto"
-          loading="eager"
         />
       </div>
       <DemoHeroGeometric />
@@ -29,19 +22,9 @@ const Index = () => {
         <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-white relative z-10 px-4">Key Features</h2>
         <TiltedScrollDemo />
       </div>
-      
-      <Suspense fallback={<div className="h-96 bg-black"></div>}>
-        <LazyPartnersSection />
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-96 bg-black"></div>}>
-        <LazyFAQSection />
-      </Suspense>
-      
-      <Suspense fallback={<div className="h-96 bg-black"></div>}>
-        <LazyBackgroundBeamsDemo />
-      </Suspense>
-      
+      <PartnersSection />
+      <FAQSection />
+      <BackgroundBeamsDemo />
       <Footer />
     </div>
   );

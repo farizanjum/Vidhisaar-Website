@@ -1,4 +1,4 @@
-<lov-codelov-code>
+
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Typewriter } from "@/components/ui/typewriter";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 function ElegantShape({
   className,
@@ -24,10 +23,6 @@ function ElegantShape({
   rotate?: number;
   gradient?: string;
 }) {
-  const isMobile = useIsMobile();
-  const scaleWidth = isMobile ? 0.6 : 1;
-  const scaleHeight = isMobile ? 0.6 : 1;
-  
   return <motion.div initial={{
     opacity: 0,
     y: -150,
@@ -44,22 +39,16 @@ function ElegantShape({
       duration: 1.2
     }
   }} className={cn("absolute", className)}>
-            <motion.div 
-              animate={{
-                y: [0, 15, 0]
-              }} 
-              transition={{
-                duration: 12,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
-                repeatType: "mirror"
-              }} 
-              style={{
-                width: width * scaleWidth,
-                height: height * scaleHeight
-              }} 
-              className="relative will-change-transform"
-            >
+            <motion.div animate={{
+      y: [0, 15, 0]
+    }} transition={{
+      duration: 12,
+      repeat: Number.POSITIVE_INFINITY,
+      ease: "easeInOut"
+    }} style={{
+      width,
+      height
+    }} className="relative">
                 <div className={cn("absolute inset-0 rounded-full", "bg-gradient-to-r to-transparent", gradient, "backdrop-blur-[2px] border-2 border-white/[0.15]", "shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]", "after:absolute after:inset-0 after:rounded-full", "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]")} />
             </motion.div>
         </motion.div>;
@@ -74,8 +63,6 @@ function HeroGeometric({
   title1?: string;
   title2?: string;
 }) {
-  const isMobile = useIsMobile();
-  
   const fadeUpVariants = {
     hidden: {
       opacity: 0,
@@ -105,16 +92,15 @@ function HeroGeometric({
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden">
-                {/* Adjusted positions for mobile */}
-                <ElegantShape delay={0.3} width={600} height={140} rotate={12} gradient="from-indigo-500/[0.15]" className="left-[-30%] sm:left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]" />
+                <ElegantShape delay={0.3} width={600} height={140} rotate={12} gradient="from-indigo-500/[0.15]" className="left-[-20%] sm:left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]" />
 
-                <ElegantShape delay={0.5} width={500} height={120} rotate={-15} gradient="from-rose-500/[0.15]" className="right-[-25%] sm:right-[-5%] md:right-[0%] top-[70%] md:top-[75%]" />
+                <ElegantShape delay={0.5} width={500} height={120} rotate={-15} gradient="from-rose-500/[0.15]" className="right-[-15%] sm:right-[-5%] md:right-[0%] top-[70%] md:top-[75%]" />
 
-                <ElegantShape delay={0.4} width={300} height={80} rotate={-8} gradient="from-violet-500/[0.15]" className="left-[-15%] sm:left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]" />
+                <ElegantShape delay={0.4} width={300} height={80} rotate={-8} gradient="from-violet-500/[0.15]" className="left-[-5%] sm:left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]" />
 
-                <ElegantShape delay={0.6} width={200} height={60} rotate={20} gradient="from-amber-500/[0.15]" className="right-[2%] sm:right-[15%] md:right-[20%] top-[10%] md:top-[15%]" />
+                <ElegantShape delay={0.6} width={200} height={60} rotate={20} gradient="from-amber-500/[0.15]" className="right-[5%] sm:right-[15%] md:right-[20%] top-[10%] md:top-[15%]" />
 
-                <ElegantShape delay={0.7} width={150} height={40} rotate={-25} gradient="from-cyan-500/[0.15]" className="left-[5%] sm:left-[20%] md:left-[25%] top-[5%] md:top-[10%]" />
+                <ElegantShape delay={0.7} width={150} height={40} rotate={-25} gradient="from-cyan-500/[0.15]" className="left-[10%] sm:left-[20%] md:left-[25%] top-[5%] md:top-[10%]" />
             </div>
 
             <div className="relative z-10 container mx-auto px-4 md:px-6">
@@ -128,11 +114,11 @@ function HeroGeometric({
 
                     <motion.div custom={1} variants={fadeUpVariants} initial="hidden" animate="visible">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-4xl sm:text-5xl md:text-7xl">
+                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-5xl md:text-7xl">
                                 {title1}
                             </span>
                             <br />
-                            <span className={cn("bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-4xl sm:text-5xl md:text-7xl")}>
+                            <span className={cn("bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 text-5xl md:text-7xl")}>
                                 You can <Typewriter 
                                   text={["Trust", "Govern", "Advocate", "Control", "Own"]} 
                                   speed={70}
@@ -158,12 +144,7 @@ function HeroGeometric({
                         </ShinyButton>
                         
                         <p className="text-white/40 text-xs sm:text-sm">
-                            <Typewriter 
-                                text="1,000+ legal experts/ Enthusiast waiting for launch" 
-                                speed={50} 
-                                className="text-white/60" 
-                                loop={true} 
-                            />
+                            <Typewriter text="1,000+ legal experts/ Enthusiast waiting for launch" speed={50} className="text-white/60" />
                         </p>
                     </motion.div>
                 </div>
@@ -174,4 +155,3 @@ function HeroGeometric({
 }
 
 export { HeroGeometric };
-</lov-code>
