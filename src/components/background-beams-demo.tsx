@@ -136,7 +136,13 @@ function BackgroundBeamsDemo() {
         </h2>
         <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
           <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
-            <span className="inline-block">Spots are filling fast. Join now before the waitlist closes!</span>
+            <Typewriter 
+              text="Spots are filling fast. Join now before the waitlist closes!" 
+              speed={50}
+              loop={true}
+              waitTime={2000}
+              className="inline-block"
+            />
           </div>
         </div>
         <div className="flex flex-col items-center justify-center mt-8 md:mt-10 z-10">
