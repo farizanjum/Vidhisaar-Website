@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState, useEffect } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -137,8 +138,6 @@ function BackgroundBeamsDemo() {
         <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
           <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
             {isMobile ? (
-              <span className="inline-block">Spots are filling fast. Join now before the waitlist closes!</span>
-            ) : (
               <Typewriter 
                 text="Spots are filling fast. Join now before the waitlist closes!" 
                 speed={50}
@@ -146,6 +145,8 @@ function BackgroundBeamsDemo() {
                 waitTime={2000}
                 className="inline-block"
               />
+            ) : (
+              <span className="inline-block">Spots are filling fast. Join now before the waitlist closes!</span>
             )}
           </div>
         </div>
