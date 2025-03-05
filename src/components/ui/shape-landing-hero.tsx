@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
@@ -7,7 +6,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { Typewriter } from "@/components/ui/typewriter";
-import { useMobile } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 function ElegantShape({
   className,
@@ -24,7 +23,7 @@ function ElegantShape({
   rotate?: number;
   gradient?: string;
 }) {
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
   const scaleWidth = isMobile ? 0.6 : 1;
   const scaleHeight = isMobile ? 0.6 : 1;
   
@@ -74,7 +73,7 @@ function HeroGeometric({
   title1?: string;
   title2?: string;
 }) {
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
   
   const fadeUpVariants = {
     hidden: {

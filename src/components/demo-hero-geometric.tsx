@@ -1,6 +1,6 @@
 
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
-import { useMobile } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 function DemoHeroGeometric() {
     return (
