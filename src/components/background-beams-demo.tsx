@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -7,6 +6,7 @@ import { HoverButton } from "@/components/ui/hover-button";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Typewriter } from "@/components/ui/typewriter";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 function BackgroundBeamsDemo() {
   const [counter, setCounter] = useState(56);
@@ -16,16 +16,15 @@ function BackgroundBeamsDemo() {
   const [otp, setOtp] = useState("");
   const [verifying, setVerifying] = useState(false);
   const { toast } = useToast();
+  const isMobile = useIsMobile();
 
-  // Modified to increase counter much more slowly (roughly once per hour)
   useEffect(() => {
     const interval = setInterval(() => {
-      // 2% chance to increase counter (roughly once per hour if checked every 5 minutes)
       if (Math.random() < 0.02) {
         setCounter(prev => prev + 1);
       }
-    }, 300000); // Check every 5 minutes
-    
+    }, 300000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -54,7 +53,6 @@ function BackgroundBeamsDemo() {
     setIsSubmitting(true);
 
     try {
-      // Use supabase.functions.invoke with the correct approach
       const { data, error } = await supabase.functions.invoke("send-otp", {
         method: 'POST',
         body: { email }
@@ -94,7 +92,6 @@ function BackgroundBeamsDemo() {
     setVerifying(true);
 
     try {
-      // Use supabase.functions.invoke with the correct approach
       const { data, error } = await supabase.functions.invoke("verify-otp", {
         method: 'POST',
         body: { email, otp }
@@ -104,7 +101,6 @@ function BackgroundBeamsDemo() {
         throw new Error(error.message || 'Failed to verify code');
       }
 
-      // Reset form
       setEmail("");
       setOtp("");
       setOtpSent(false);
@@ -114,7 +110,6 @@ function BackgroundBeamsDemo() {
         description: "Your email has been verified and you've been added to our waitlist!",
       });
       
-      // Optional: Increase counter for immediate feedback
       setCounter(prev => prev + 1);
     } catch (error) {
       console.error('Error verifying OTP:', error);
@@ -127,7 +122,7 @@ function BackgroundBeamsDemo() {
       setVerifying(false);
     }
   };
-  
+
   return (
     <div id="waitlist" className="h-auto min-h-[40rem] w-full rounded-md bg-[#030303] relative flex flex-col items-center justify-center antialiased px-4 py-16 sm:py-0">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
@@ -141,13 +136,17 @@ function BackgroundBeamsDemo() {
         </h2>
         <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
           <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
-            <Typewriter 
-              text="Spots are filling fast. Join now before the waitlist closes!" 
-              speed={50}
-              loop={true}
-              waitTime={2000}
-              className="inline-block"
-            />
+            {isMobile ? (
+              <span className="inline-block">Spots are filling fast. Join now before the waitlist closes!</span>
+            ) : (
+              <Typewriter 
+                text="Spots are filling fast. Join now before the waitlist closes!" 
+                speed={50}
+                loop={true}
+                waitTime={2000}
+                className="inline-block"
+              />
+            )}
           </div>
         </div>
         <div className="flex flex-col items-center justify-center mt-8 md:mt-10 z-10">
