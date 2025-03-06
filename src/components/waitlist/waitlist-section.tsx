@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState, useEffect } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -51,23 +50,23 @@ export function WaitlistSection() {
           Limited Spots Available!
         </h2>
         
-        <div className="mt-4 sm:mt-6 md:mt-8 mb-4 sm:mb-8 md:mb-10">
-          <div className="text-[#9F9EA1] text-xs md:text-base text-center z-20">
-            {isMobile ? (
-              <span>Spots are filling fast. Join now before the waitlist closes!</span>
-            ) : (
-              <Typewriter 
-                text="Spots are filling fast. Join now before the waitlist closes!" 
-                speed={50}
-                loop={true}
-                initialDelay={2000}
-                className="inline-block"
-              />
-            )}
-          </div>
+      <div className="mt-4 sm:mt-6 md:mt-8 mb-6 sm:mb-10 md:mb-12">
+        <div className="text-[#9F9EA1] text-xs md:text-base text-center z-20">
+          {isMobile ? (
+            <span>Spots are filling fast. Join now before the waitlist closes!</span>
+          ) : (
+            <Typewriter 
+              text="Spots are filling fast. Join now before the waitlist closes!" 
+              speed={50}
+              loop={true}
+              initialDelay={2000}
+              className="inline-block"
+            />
+          )}
         </div>
-        
-        <div className="flex flex-col items-center justify-center mt-4 sm:mt-8 md:mt-10 z-10 w-full">
+      </div>
+      
+      <div className="flex flex-col items-center justify-center mt-8 sm:mt-10 md:mt-12 z-10 w-full">
           {!otpSent ? (
             <WaitlistForm onSuccess={handleOtpSent} />
           ) : (
