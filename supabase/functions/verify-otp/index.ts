@@ -140,28 +140,49 @@ serve(async (req) => {
       waitlistId = inserted.id;
     }
 
-    // Send confirmation email
+    // Send confirmation email with improved design
     const emailResult = await resend.emails.send({
-      from: "Vidhisaar <onboarding@resend.dev>",
+      from: "Vidhisaar <no-reply@verification.vidhisaarai.in>",
       to: [email],
       subject: "Welcome to the Vidhisaar Waitlist!",
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333366;">You're on the Vidhisaar Waitlist!</h2>
-          <p>Thank you for joining our waitlist! We're excited to have you as one of our early supporters.</p>
-          <p>We'll notify you as soon as Vidhisaar is ready for you to explore.</p>
-          <div style="background-color: #f4f4f9; padding: 20px; border-radius: 5px; margin: 20px 0;">
-            <p>While you wait, follow us on social media to stay updated on our progress:</p>
-            <div style="display: flex; justify-content: center; gap: 15px; margin-top: 15px;">
-              <a href="#" style="color: #333366; text-decoration: none;">Twitter</a>
-              <a href="#" style="color: #333366; text-decoration: none;">LinkedIn</a>
-              <a href="#" style="color: #333366; text-decoration: none;">Instagram</a>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333366;">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <img src="https://i.imgur.com/O1msyDo.png" alt="Vidhisaar Logo" style="max-width: 200px; height: auto;">
+          </div>
+          
+          <h2 style="color: #333366; text-align: center; margin-bottom: 20px;">You're on the Vidhisaar Waitlist!</h2>
+          
+          <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5;">Thank you for joining our waitlist! We're excited to have you as one of our early supporters.</p>
+          
+          <p style="margin-bottom: 24px; font-size: 16px; line-height: 1.5;">We'll notify you as soon as Vidhisaar is ready for you to explore.</p>
+          
+          <div style="background-color: #f4f4f9; padding: 24px; border-radius: 8px; margin: 24px 0;">
+            <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5; text-align: center;">While you wait, follow us on social media to stay updated on our progress:</p>
+            
+            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" alt="Instagram" style="width: 32px; height: 32px;">
+                <span style="font-size: 14px;">Instagram</span>
+              </a>
+              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" alt="X (Twitter)" style="width: 32px; height: 32px;">
+                <span style="font-size: 14px;">X (Twitter)</span>
+              </a>
+              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+                <span style="font-size: 14px;">LinkedIn</span>
+              </a>
             </div>
           </div>
-          <p>We appreciate your interest and can't wait to show you what we're building!</p>
-          <p style="margin-top: 30px; font-size: 12px; color: #666;">
-            &copy; Vidhisaar. All rights reserved.
-          </p>
+          
+          <p style="margin-bottom: 24px; font-size: 16px; line-height: 1.5; text-align: center;">We appreciate your interest and can't wait to show you what we're building!</p>
+          
+          <div style="border-top: 1px solid #e5e5e5; padding-top: 20px; margin-top: 30px; text-align: center;">
+            <p style="font-size: 12px; color: #666;">
+              &copy; 2023 Vidhisaar. All rights reserved.
+            </p>
+          </div>
         </div>
       `,
     });
