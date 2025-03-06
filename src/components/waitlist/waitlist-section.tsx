@@ -47,11 +47,11 @@ export function WaitlistSection() {
         <h1 className="relative z-10 text-2xl sm:text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-center font-sans font-bold">
           Exclusive Early Access
         </h1>
-        <h2 className="relative z-10 text-xl sm:text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-2 sm:mt-3">
+        <h2 className="relative z-10 text-xl sm:text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-4 sm:mt-3">
           Limited Spots Available!
         </h2>
         
-        <div className="mt-4 sm:mt-6 md:mt-8 mb-4 sm:mb-8 md:mb-10">
+        <div className="mt-6 sm:mt-6 md:mt-8 mb-6 sm:mb-8 md:mb-10">
           <div className="text-[#9F9EA1] text-xs md:text-base text-center z-20">
             {isMobile ? (
               <span>Spots are filling fast. Join now before the waitlist closes!</span>
@@ -67,7 +67,7 @@ export function WaitlistSection() {
           </div>
         </div>
         
-        <div className="flex flex-col items-center justify-center mt-4 sm:mt-8 md:mt-10 z-10 w-full">
+        <div className="flex flex-col items-center justify-center mt-6 sm:mt-8 md:mt-10 z-10 w-full space-y-6 sm:space-y-8">
           {!otpSent ? (
             <WaitlistForm onSuccess={handleOtpSent} />
           ) : (
