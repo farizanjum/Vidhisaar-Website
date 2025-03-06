@@ -44,10 +44,10 @@ export function WaitlistSection() {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
       
       <div className="max-w-2xl mx-auto p-3 sm:p-4 z-10">
-        <h1 className="relative z-10 text-xl sm:text-2xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-center font-sans font-bold">
+        <h1 className="relative z-10 text-2xl sm:text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80 text-center font-sans font-bold">
           Exclusive Early Access
         </h1>
-        <h2 className="relative z-10 text-lg sm:text-xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-2 sm:mt-3">
+        <h2 className="relative z-10 text-xl sm:text-2xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-2 sm:mt-3">
           Limited Spots Available!
         </h2>
         
