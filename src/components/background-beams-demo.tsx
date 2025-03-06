@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Input } from "@/components/ui/input";
-import { HoverButton } from "@/components/ui/hover-button";
+import { FixedHoverButton } from "@/components/ui/fixed-hover-button";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { Typewriter } from "@/components/ui/typewriter";
+import { FixedHeightTypewriter } from "@/components/ui/fixed-height-typewriter";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 function BackgroundBeamsDemo() {
@@ -136,12 +136,13 @@ function BackgroundBeamsDemo() {
           Limited Spots Available!
         </h2>
         <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
-          <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10 h-[24px]">
-            <Typewriter 
+          <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
+            <FixedHeightTypewriter 
               text="Spots are filling fast. Join now before the waitlist closes!" 
               speed={50}
               loop={true}
               waitTime={2000}
+              height="24px"
               className="inline-block"
             />
           </div>
@@ -157,8 +158,9 @@ function BackgroundBeamsDemo() {
                 onChange={handleEmailChange}
                 disabled={isSubmitting}
               />
-              <HoverButton 
-                className="text-white w-full max-w-md h-[48px] min-h-[48px]"
+              <FixedHoverButton 
+                className="text-white w-full max-w-md"
+                height="48px"
                 style={{
                   "--circle-start": "#6344F5",
                   "--circle-end": "#18CCFC",
@@ -167,7 +169,7 @@ function BackgroundBeamsDemo() {
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Join Waitlist Now"}
-              </HoverButton>
+              </FixedHoverButton>
             </>
           ) : (
             <>
@@ -184,8 +186,9 @@ function BackgroundBeamsDemo() {
                 disabled={verifying}
               />
               <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-                <HoverButton 
-                  className="text-white w-full sm:w-1/2 h-[48px] min-h-[48px]"
+                <FixedHoverButton 
+                  className="text-white w-full sm:w-1/2"
+                  height="48px"
                   style={{
                     "--circle-start": "#6344F5",
                     "--circle-end": "#18CCFC",
@@ -194,9 +197,10 @@ function BackgroundBeamsDemo() {
                   disabled={verifying}
                 >
                   {verifying ? "Verifying..." : "Verify Code"}
-                </HoverButton>
-                <HoverButton 
-                  className="text-white/80 w-full sm:w-1/2 bg-transparent h-[48px] min-h-[48px]"
+                </FixedHoverButton>
+                <FixedHoverButton 
+                  className="text-white/80 w-full sm:w-1/2 bg-transparent"
+                  height="48px"
                   style={{
                     "--circle-start": "#6344F5",
                     "--circle-end": "#18CCFC",
@@ -205,7 +209,7 @@ function BackgroundBeamsDemo() {
                   disabled={verifying}
                 >
                   Back
-                </HoverButton>
+                </FixedHoverButton>
               </div>
             </>
           )}
