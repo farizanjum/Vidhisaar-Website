@@ -1,6 +1,6 @@
 
 import { DemoHeroGeometric } from "@/components/demo-hero-geometric";
-import { BackgroundBeamsDemo } from "@/components/background-beams-demo";
+import { WaitlistSection } from "@/components/waitlist/waitlist-section";
 import { TiltedScrollDemo } from "@/components/tilted-scroll-demo";
 import { PartnersSection } from "@/components/partners-section";
 import { FAQSection } from "@/components/faq-section";
@@ -28,7 +28,7 @@ const Index = () => {
       </div>
       <PartnersSection />
       <FAQSection />
-      <BackgroundBeamsDemo />
+      <WaitlistSection />
       <Footer />
     </div>
   );
