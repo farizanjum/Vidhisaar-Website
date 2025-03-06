@@ -55,7 +55,7 @@ export function WaitlistSection() {
               text="Spots are filling fast. Join now before the waitlist closes!" 
               speed={50}
               loop={true}
-              delay={2000}
+              initialDelay={2000}
               className="inline-block"
             />
           </div>
