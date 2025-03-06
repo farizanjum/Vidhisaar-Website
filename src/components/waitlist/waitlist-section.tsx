@@ -5,12 +5,14 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { WaitlistForm } from "@/components/waitlist/waitlist-form";
 import { VerificationForm } from "@/components/waitlist/verification-form";
 import { CounterDisplay } from "@/components/waitlist/counter-display";
-import { Typewriter } from "@/components/ui/typewriter"; // Using the Typewriter component instead
+import { Typewriter } from "@/components/ui/typewriter";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function WaitlistSection() {
   const [counter, setCounter] = useState(56);
   const [email, setEmail] = useState("");
   const [otpSent, setOtpSent] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -51,13 +53,17 @@ export function WaitlistSection() {
         
         <div className="mt-6 md:mt-8 mb-8 md:mb-10">
           <div className="text-white text-sm md:text-base text-center z-20">
-            <Typewriter 
-              text="Spots are filling fast. Join now before the waitlist closes!" 
-              speed={50}
-              loop={true}
-              initialDelay={2000}
-              className="inline-block"
-            />
+            {isMobile ? (
+              <span>Spots are filling fast. Join now before the waitlist closes!</span>
+            ) : (
+              <Typewriter 
+                text="Spots are filling fast. Join now before the waitlist closes!" 
+                speed={50}
+                loop={true}
+                initialDelay={2000}
+                className="inline-block"
+              />
+            )}
           </div>
         </div>
         
