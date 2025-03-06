@@ -94,7 +94,7 @@ serve(async (req) => {
           </div>
           
           <p style="margin-top: 20px; font-size: 12px; color: #666; text-align: center;">
-            &copy; 2023 Vidhisaar. All rights reserved.
+            &copy; 2025 Vidhisaar. All rights reserved.
           </p>
         </div>
       `,
