@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState, useEffect } from "react";
 import { BackgroundBeams } from "@/components/ui/background-beams";
@@ -135,7 +136,7 @@ function BackgroundBeamsDemo() {
           Limited Spots Available!
         </h2>
         <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
-          <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
+          <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10 h-[24px]">
             <Typewriter 
               text="Spots are filling fast. Join now before the waitlist closes!" 
               speed={50}
@@ -157,7 +158,7 @@ function BackgroundBeamsDemo() {
                 disabled={isSubmitting}
               />
               <HoverButton 
-                className="text-white w-full max-w-md"
+                className="text-white w-full max-w-md h-[48px] min-h-[48px]"
                 style={{
                   "--circle-start": "#6344F5",
                   "--circle-end": "#18CCFC",
@@ -184,7 +185,7 @@ function BackgroundBeamsDemo() {
               />
               <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
                 <HoverButton 
-                  className="text-white w-full sm:w-1/2"
+                  className="text-white w-full sm:w-1/2 h-[48px] min-h-[48px]"
                   style={{
                     "--circle-start": "#6344F5",
                     "--circle-end": "#18CCFC",
@@ -195,7 +196,7 @@ function BackgroundBeamsDemo() {
                   {verifying ? "Verifying..." : "Verify Code"}
                 </HoverButton>
                 <HoverButton 
-                  className="text-white/80 w-full sm:w-1/2 bg-transparent"
+                  className="text-white/80 w-full sm:w-1/2 bg-transparent h-[48px] min-h-[48px]"
                   style={{
                     "--circle-start": "#6344F5",
                     "--circle-end": "#18CCFC",
