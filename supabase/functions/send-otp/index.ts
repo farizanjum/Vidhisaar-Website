@@ -56,22 +56,45 @@ serve(async (req) => {
       );
     }
 
-    // Send the OTP via email
+    // Send the OTP via email with improved design
     const emailResult = await resend.emails.send({
-      from: "Vidhisaar <onboarding@resend.dev>",
+      from: "Vidhisaar <no-reply@verification.vidhisaarai.in>",
       to: [email],
       subject: "Your Vidhisaar Waitlist Verification Code",
       html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333366;">Verify Your Email for Vidhisaar Waitlist</h2>
-          <p>Thank you for joining the Vidhisaar waitlist! Please use the following verification code to complete your registration:</p>
-          <div style="background-color: #f4f4f9; padding: 15px; border-radius: 5px; text-align: center; margin: 20px 0;">
-            <h1 style="letter-spacing: 5px; font-size: 32px; margin: 0; color: #333366;">${otp}</h1>
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333366;">
+          <div style="text-align: center; margin-bottom: 24px;">
+            <img src="https://i.imgur.com/O1msyDo.png" alt="Vidhisaar Logo" style="max-width: 200px; height: auto;">
           </div>
-          <p>This code will expire in 15 minutes.</p>
-          <p>If you didn't request this code, please ignore this email.</p>
-          <p style="margin-top: 30px; font-size: 12px; color: #666;">
-            &copy; Vidhisaar. All rights reserved.
+          
+          <h2 style="color: #333366; margin-bottom: 16px;">Verify Your Email for Vidhisaar Waitlist</h2>
+          
+          <p style="margin-bottom: 20px; font-size: 16px; line-height: 1.5;">Thank you for joining the Vidhisaar waitlist! Please use the following verification code to complete your registration:</p>
+          
+          <div style="background-color: #f4f4f9; padding: 20px; border-radius: 8px; text-align: center; margin: 24px 0;">
+            <h1 style="letter-spacing: 8px; font-size: 36px; margin: 0; color: #333366;">${otp}</h1>
+          </div>
+          
+          <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5;">This code will expire in 15 minutes.</p>
+          <p style="margin-bottom: 30px; font-size: 16px; line-height: 1.5;">If you didn't request this code, please ignore this email.</p>
+          
+          <div style="border-top: 1px solid #e5e5e5; padding-top: 20px; margin-top: 30px;">
+            <p style="margin-bottom: 16px; font-size: 14px; color: #666;">Connect with us:</p>
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">
+                <img src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" alt="Instagram" style="width: 24px; height: 24px;">
+              </a>
+              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">
+                <img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" alt="X (Twitter)" style="width: 24px; height: 24px;">
+              </a>
+              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
+                <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="LinkedIn" style="width: 24px; height: 24px;">
+              </a>
+            </div>
+          </div>
+          
+          <p style="margin-top: 20px; font-size: 12px; color: #666; text-align: center;">
+            &copy; 2023 Vidhisaar. All rights reserved.
           </p>
         </div>
       `,
