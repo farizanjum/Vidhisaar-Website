@@ -48,7 +48,8 @@ export function WaitlistSection() {
         <h2 className="relative z-10 text-xl md:text-3xl bg-clip-text text-transparent bg-gradient-to-b from-white/90 to-white/70 text-center font-sans font-bold mt-3">
           Limited Spots Available!
         </h2>
-        <div className="mt-6 md:mt-8 mb-8 md:mb-10 flex justify-center">
+        
+        <div className="mt-6 md:mt-8 mb-8 md:mb-10">
           <div className="text-white/70 max-w-lg mx-auto text-sm md:text-base text-center relative z-10">
             <FixedHeightTypewriter 
               text="Spots are filling fast. Join now before the waitlist closes!" 
@@ -60,6 +61,7 @@ export function WaitlistSection() {
             />
           </div>
         </div>
+        
         <div className="flex flex-col items-center justify-center mt-8 md:mt-10 z-10">
           {!otpSent ? (
             <WaitlistForm onSuccess={handleOtpSent} />
