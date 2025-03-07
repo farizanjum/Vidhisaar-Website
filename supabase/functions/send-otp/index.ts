@@ -5,8 +5,9 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.32.0";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL") || "https://yaaxydqaiktwwztbfdwp.supabase.co";
 const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
-const resendApiKey = Deno.env.get("RESEND_API_KEY") || "re_AUau1LBV_LwxhEZRsWMJxSRM8E3Aw3RGB";
+const resendApiKey = Deno.env.get("RESEND_API_KEY") || "";
 
+// Initialize the Resend client with the API key
 const resend = new Resend(resendApiKey);
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -56,6 +57,10 @@ serve(async (req) => {
       );
     }
 
+    // Log before email send for debugging
+    console.log("About to send email with Resend using API key:", 
+      resendApiKey ? "API key is set" : "API key is NOT set");
+
     // Send the OTP via email with improved design
     const emailResult = await resend.emails.send({
       from: "Vidhisaar <no-reply@verification.vidhisaarai.in>",
@@ -100,7 +105,19 @@ serve(async (req) => {
       `,
     });
 
-    console.log("Email sent:", emailResult);
+    console.log("Email send result:", JSON.stringify(emailResult));
+
+    // Check if there was an error with sending the email
+    if (emailResult.error) {
+      console.error("Error sending email:", emailResult.error);
+      return new Response(
+        JSON.stringify({ error: "Failed to send verification code" }),
+        { 
+          status: 500, 
+          headers: { "Content-Type": "application/json", ...corsHeaders } 
+        }
+      );
+    }
 
     return new Response(
       JSON.stringify({ success: true, message: "OTP sent successfully" }),
