@@ -184,7 +184,7 @@ serve(async (req) => {
           
           <div style="border-top: 1px solid #e5e5e5; padding-top: 20px; margin-top: 30px; text-align: center;">
             <p style="font-size: 12px; color: #666;">
-              &copy; 2023 Vidhisaar. All rights reserved.
+              &copy; 2025 Vidhisaar. All rights reserved.
             </p>
           </div>
         </div>
