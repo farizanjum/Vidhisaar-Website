@@ -69,7 +69,9 @@ serve(async (req) => {
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333366;">
           <div style="text-align: center; margin-bottom: 24px;">
-            <img src="https://i.imgur.com/O1msyDo.png" alt="Vidhisaar Logo" style="max-width: 200px; height: auto;">
+            <a href="https://www.vidhisaarai.in" style="text-decoration: none;">
+              <img src="https://i.imgur.com/PpcaA8d.png" alt="Vidhisaar Header" style="max-width: 100%; height: auto;">
+            </a>
           </div>
           
           <h2 style="color: #333366; margin-bottom: 16px;">Verify Your Email for Vidhisaar Waitlist</h2>
@@ -83,24 +85,24 @@ serve(async (req) => {
           <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5;">This code will expire in 15 minutes.</p>
           <p style="margin-bottom: 30px; font-size: 16px; line-height: 1.5;">If you didn't request this code, please ignore this email.</p>
           
-          <div style="border-top: 1px solid #e5e5e5; padding-top: 20px; margin-top: 30px;">
-            <p style="margin-bottom: 16px; font-size: 14px; color: #666;">Connect with us:</p>
-            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">
-                <img src="https://cdn-icons-png.flaticon.com/128/1409/1409946.png" alt="Instagram" style="width: 24px; height: 24px;">
-              </a>
-              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">
-                <img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" alt="X (Twitter)" style="width: 24px; height: 24px;">
-              </a>
-              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
-                <img src="https://cdn-icons-png.flaticon.com/128/145/145807.png" alt="LinkedIn" style="width: 24px; height: 24px;">
-              </a>
+          <div style="background-color: #f4f4f9; padding: 16px; border-radius: 8px; margin: 24px 0;">
+            <p style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; text-align: center;">While you wait, follow us on social media to stay updated on our progress:</p>
+            
+            <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 12px;">
+              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">Instagram</a>
+              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">X (Twitter)</a>
+              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">LinkedIn</a>
             </div>
           </div>
           
-          <p style="margin-top: 20px; font-size: 12px; color: #666; text-align: center;">
-            &copy; 2025 Vidhisaar. All rights reserved.
-          </p>
+          <div style="border-top: 1px solid #e5e5e5; padding-top: 20px; margin-top: 30px; text-align: center;">
+            <p style="font-size: 12px; color: #666; margin-bottom: 8px;">
+              Azamgarh, Uttar Pradesh, India 276121
+            </p>
+            <p style="font-size: 12px; color: #666;">
+              &copy; 2025 Vidhisaar. All rights reserved.
+            </p>
+          </div>
         </div>
       `,
     });
