@@ -5,7 +5,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.32.0";
 
 const supabaseUrl = Deno.env.get("SUPABASE_URL") || "https://yaaxydqaiktwwztbfdwp.supabase.co";
 const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
-const resendApiKey = Deno.env.get("RESEND_API_KEY");
+const resendApiKey = Deno.env.get("RESEND_API_KEY") || "re_AUau1LBV_LwxhEZRsWMJxSRM8E3Aw3RGB";
 
 const resend = new Resend(resendApiKey);
 const supabase = createClient(supabaseUrl, supabaseKey);
