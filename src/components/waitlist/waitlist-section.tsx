@@ -7,32 +7,77 @@ import { VerificationForm } from "@/components/waitlist/verification-form";
 import { CounterDisplay } from "@/components/waitlist/counter-display";
 import { Typewriter } from "@/components/ui/typewriter";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { FixedHoverButton } from "@/components/ui/fixed-hover-button";
+
 export function WaitlistSection() {
-  const [counter, setCounter] = useState(56);
+  const [counter, setCounter] = useState<number | null>(null);
   const [email, setEmail] = useState("");
   const [otpSent, setOtpSent] = useState(false);
+  const [alreadyWaitlisted, setAlreadyWaitlisted] = useState(false);
   const isMobile = useIsMobile();
+  const { toast } = useToast();
+
+  // Fetch the waitlist count when the component mounts
+  useEffect(() => {
+    const fetchWaitlistCount = async () => {
+      try {
+        const { count, error } = await supabase
+          .from('waitlist')
+          .select('*', { count: 'exact', head: true })
+          .eq('verified', true);
+        
+        if (error) {
+          console.error('Error fetching waitlist count:', error);
+          // Default to 56 if there's an error
+          setCounter(56);
+        } else {
+          // Set the actual count or default to 56 if count is null
+          setCounter(count || 56);
+        }
+      } catch (error) {
+        console.error('Error fetching waitlist count:', error);
+        setCounter(56);
+      }
+    };
+
+    fetchWaitlistCount();
+  }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (Math.random() < 0.02) {
-        setCounter(prev => prev + 1);
+        setCounter(prev => (prev || 56) + 1);
       }
     }, 300000);
     return () => clearInterval(interval);
   }, []);
+
   const handleOtpSent = (email: string) => {
     setEmail(email);
     setOtpSent(true);
   };
+
   const handleVerificationSuccess = () => {
     setEmail("");
     setOtpSent(false);
-    setCounter(prev => prev + 1);
+    setCounter(prev => (prev || 56) + 1);
+    
+    // Reset already waitlisted state
+    setAlreadyWaitlisted(false);
   };
+
   const handleBackToEmail = () => {
     setOtpSent(false);
   };
-  return <div id="waitlist" className="h-auto min-h-[40rem] w-full rounded-md bg-[#030303] relative flex flex-col items-center justify-center antialiased px-2 sm:px-4 py-8 sm:py-16">
+
+  const handleAlreadyWaitlisted = () => {
+    setAlreadyWaitlisted(true);
+  };
+
+  return (
+    <div id="waitlist" className="h-auto min-h-[40rem] w-full rounded-md bg-[#030303] relative flex flex-col items-center justify-center antialiased px-2 sm:px-4 py-8 sm:py-16">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
       
       <div className="max-w-2xl mx-auto p-3 sm:p-4 z-10">
@@ -43,18 +88,60 @@ export function WaitlistSection() {
           Limited Spots Available!
         </h2>
         
-      <div className="mt-4 sm:mt-6 md:mt-8 mb-6 sm:mb-10 md:mb-12">
-        <div className="text-[#9F9EA1] text-xs md:text-base text-center z-20">
-          {isMobile ? <span>Spots are filling fast. Join now before the waitlist closes!</span> : <Typewriter text="Spots are filling fast. Join now before the waitlist closes!" speed={50} loop={true} initialDelay={2000} className="inline-block" />}
+        <div className="mt-4 sm:mt-6 md:mt-8 mb-6 sm:mb-10 md:mb-12">
+          <div className="text-[#9F9EA1] text-xs md:text-base text-center z-20">
+            {isMobile ? (
+              <span>Spots are filling fast. Join now before the waitlist closes!</span>
+            ) : (
+              <Typewriter 
+                text="Spots are filling fast. Join now before the waitlist closes!" 
+                speed={50} 
+                loop={true} 
+                initialDelay={2000} 
+                className="inline-block" 
+              />
+            )}
+          </div>
         </div>
-      </div>
-      
-      <div className="flex flex-col items-center justify-center mt-8 sm:mt-10 md:mt-12 z-10 w-full">
-          {!otpSent ? <WaitlistForm onSuccess={handleOtpSent} /> : <VerificationForm email={email} onSuccess={handleVerificationSuccess} onBack={handleBackToEmail} />}
+        
+        <div className="flex flex-col items-center justify-center mt-8 sm:mt-10 md:mt-12 z-10 w-full">
+          {alreadyWaitlisted ? (
+            <div className="text-center">
+              <div className="text-white text-xl font-semibold mb-4">
+                You're Already on the Waitlist!
+              </div>
+              <p className="text-white/80 mb-6">
+                Thank you for your interest! We'll notify you as soon as Vidhisaar is ready.
+              </p>
+              <FixedHoverButton 
+                className="text-white w-full max-w-md"
+                height="48px"
+                style={{
+                  "--circle-start": "#6344F5",
+                  "--circle-end": "#18CCFC",
+                } as React.CSSProperties}
+                onClick={() => setAlreadyWaitlisted(false)}
+              >
+                Back to Form
+              </FixedHoverButton>
+            </div>
+          ) : !otpSent ? (
+            <WaitlistForm 
+              onSuccess={handleOtpSent} 
+              onAlreadyWaitlisted={handleAlreadyWaitlisted} 
+            />
+          ) : (
+            <VerificationForm 
+              email={email} 
+              onSuccess={handleVerificationSuccess} 
+              onBack={handleBackToEmail} 
+            />
+          )}
           
-          <CounterDisplay counter={counter} />
+          {counter !== null && <CounterDisplay counter={counter} />}
         </div>
       </div>
       <BackgroundBeams />
-    </div>;
+    </div>
+  );
 }

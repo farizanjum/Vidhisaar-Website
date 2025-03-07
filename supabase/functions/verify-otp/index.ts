@@ -171,9 +171,15 @@ serve(async (req) => {
             <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5; text-align: center;">While you wait, follow us on social media to stay updated on our progress:</p>
             
             <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 12px;">
-              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">Instagram</a>
-              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">X (Twitter)</a>
-              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">LinkedIn</a>
+              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">
+                <img src="https://i.imgur.com/VIExRmr.png" alt="Instagram" style="width: 32px; height: 32px;">
+              </a>
+              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">
+                <img src="https://i.imgur.com/Ax67KXb.png" alt="X (Twitter)" style="width: 32px; height: 32px;">
+              </a>
+              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
+                <img src="https://i.imgur.com/RGHdieR.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+              </a>
             </div>
           </div>
           

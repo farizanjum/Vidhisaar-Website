@@ -8,9 +8,10 @@ import { useToast } from "@/hooks/use-toast";
 
 interface WaitlistFormProps {
   onSuccess: (email: string) => void;
+  onAlreadyWaitlisted: () => void;
 }
 
-export const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
+export const WaitlistForm = ({ onSuccess, onAlreadyWaitlisted }: WaitlistFormProps) => {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -43,6 +44,15 @@ export const WaitlistForm = ({ onSuccess }: WaitlistFormProps) => {
 
       if (error) {
         throw new Error(error.message || 'Failed to send verification code');
+      }
+
+      if (data.alreadyWaitlisted) {
+        toast({
+          title: "Already on Waitlist",
+          description: "You are already on our waitlist!",
+        });
+        onAlreadyWaitlisted();
+        return;
       }
 
       toast({

@@ -35,6 +35,31 @@ serve(async (req) => {
       );
     }
 
+    // Check if the email is already verified in the waitlist
+    const { data: existingUser, error: checkError } = await supabase
+      .from('waitlist')
+      .select('*')
+      .eq('email', email)
+      .eq('verified', true)
+      .maybeSingle();
+
+    if (checkError) {
+      console.error("Error checking existing waitlist entry:", checkError);
+    }
+
+    if (existingUser) {
+      return new Response(
+        JSON.stringify({ 
+          alreadyWaitlisted: true, 
+          message: "You are already on our waitlist!" 
+        }),
+        { 
+          status: 200, 
+          headers: { "Content-Type": "application/json", ...corsHeaders } 
+        }
+      );
+    }
+
     // Generate a 6-digit OTP code
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     
@@ -89,9 +114,15 @@ serve(async (req) => {
             <p style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; text-align: center;">While you wait, follow us on social media to stay updated on our progress:</p>
             
             <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 12px;">
-              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">Instagram</a>
-              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">X (Twitter)</a>
-              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">LinkedIn</a>
+              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">
+                <img src="https://i.imgur.com/VIExRmr.png" alt="Instagram" style="width: 32px; height: 32px;">
+              </a>
+              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">
+                <img src="https://i.imgur.com/Ax67KXb.png" alt="X (Twitter)" style="width: 32px; height: 32px;">
+              </a>
+              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
+                <img src="https://i.imgur.com/RGHdieR.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+              </a>
             </div>
           </div>
           
