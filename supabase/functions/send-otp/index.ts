@@ -87,7 +87,7 @@ serve(async (req) => {
 
     // Send the OTP via email with improved design
     const emailResult = await resend.emails.send({
-      from: "Vidhisaar <notify@verification.vidhisaarai.in>",
+      from: "Vidhisaar AI <notify@verification.vidhisaarai.in>",
       to: [email],
       subject: "Your Vidhisaar AI Waitlist Verification Code",
       html: `
