@@ -89,7 +89,7 @@ serve(async (req) => {
     const emailResult = await resend.emails.send({
       from: "Vidhisaar <notify@verification.vidhisaarai.in>",
       to: [email],
-      subject: "Your Vidhisaar Waitlist Verification Code",
+      subject: "Your Vidhisaar AI Waitlist Verification Code",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333366;">
           <div style="text-align: center; margin-bottom: 24px;">
