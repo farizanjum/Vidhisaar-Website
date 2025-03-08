@@ -112,14 +112,14 @@ serve(async (req) => {
           <div style="background-color: #f4f4f9; padding: 16px; border-radius: 8px; margin: 24px 0;">
             <p style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; text-align: center;">While you wait, follow us on social media to stay updated on our progress:</p>
             
-            <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 12px;">
-              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
+            <div style="display: flex; justify-content: center; margin-bottom: 12px;">
+              <a href="https://www.linkedin.com/company/vidhisaarai/" style="display: inline-block; margin: 0 30px;">
                 <img src="https://i.imgur.com/4SjGhmg.png" alt="LinkedIn" style="width: 32px; height: 32px;">
               </a>
-              <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">
+              <a href="https://www.instagram.com/vidhisaar.ai" style="display: inline-block; margin: 0 30px;">
                 <img src="https://i.imgur.com/Z9HezDJ.png" alt="Instagram" style="width: 32px; height: 32px;">
               </a>
-              <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">
+              <a href="https://x.com/vidhisaarAI" style="display: inline-block; margin: 0 30px;">
                 <img src="https://i.imgur.com/kIYBdoj.png" alt="X (Twitter)" style="width: 32px; height: 32px;">
               </a>
             </div>
