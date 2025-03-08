@@ -7,7 +7,6 @@ const supabaseUrl = Deno.env.get("SUPABASE_URL") || "https://yaaxydqaiktwwztbfdw
 const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") || "";
 const resendApiKey = Deno.env.get("RESEND_API_KEY") || "";
 
-// Initialize the Resend client with the API key
 const resend = new Resend(resendApiKey);
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -88,7 +87,7 @@ serve(async (req) => {
 
     // Send the OTP via email with improved design
     const emailResult = await resend.emails.send({
-      from: "Vidhisaar <no-reply@verification.vidhisaarai.in>",
+      from: "Vidhisaar <notify@verification.vidhisaarai.in>",
       to: [email],
       subject: "Your Vidhisaar Waitlist Verification Code",
       html: `
@@ -114,14 +113,14 @@ serve(async (req) => {
             <p style="margin-bottom: 12px; font-size: 16px; line-height: 1.5; text-align: center;">While you wait, follow us on social media to stay updated on our progress:</p>
             
             <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 12px;">
+              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
+                <img src="https://i.imgur.com/4SjGhmg.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+              </a>
               <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">
-                <img src="https://i.imgur.com/VIExRmr.png" alt="Instagram" style="width: 32px; height: 32px;">
+                <img src="https://i.imgur.com/Z9HezDJ.png" alt="Instagram" style="width: 32px; height: 32px;">
               </a>
               <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">
-                <img src="https://i.imgur.com/Ax67KXb.png" alt="X (Twitter)" style="width: 32px; height: 32px;">
-              </a>
-              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
-                <img src="https://i.imgur.com/RGHdieR.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+                <img src="https://i.imgur.com/kIYBdoj.png" alt="X (Twitter)" style="width: 32px; height: 32px;">
               </a>
             </div>
           </div>

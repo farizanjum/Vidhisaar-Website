@@ -146,7 +146,7 @@ serve(async (req) => {
 
     // Send confirmation email with improved design
     const emailResult = await resend.emails.send({
-      from: "Vidhisaar <no-reply@verification.vidhisaarai.in>",
+      from: "Vidhisaar <updates@verification.vidhisaarai.in>",
       to: [email],
       subject: "Welcome to the Vidhisaar Waitlist!",
       html: `
@@ -157,7 +157,7 @@ serve(async (req) => {
             </a>
           </div>
           
-          <h2 style="color: #333366; text-align: center; margin-bottom: 20px;">You're on the Vidhisaar Waitlist!</h2>
+          <h2 style="background: linear-gradient(to right, #0f0c29, #302b63, #24243e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; margin-bottom: 20px; font-size: 28px;">Congratulations!! You're on the Vidhisaar AI Waitlist.</h2>
           
           <div style="text-align: center; margin-bottom: 24px;">
             <img src="https://i.imgur.com/q2iDhbP.png" alt="Vidhisaar Banner" style="max-width: 100%; height: auto;">
@@ -171,14 +171,14 @@ serve(async (req) => {
             <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5; text-align: center;">While you wait, follow us on social media to stay updated on our progress:</p>
             
             <div style="display: flex; justify-content: center; gap: 16px; margin-bottom: 12px;">
+              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
+                <img src="https://i.imgur.com/4SjGhmg.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+              </a>
               <a href="https://www.instagram.com/vidhisaar.ai" style="color: #333366; text-decoration: none;">
-                <img src="https://i.imgur.com/VIExRmr.png" alt="Instagram" style="width: 32px; height: 32px;">
+                <img src="https://i.imgur.com/Z9HezDJ.png" alt="Instagram" style="width: 32px; height: 32px;">
               </a>
               <a href="https://x.com/vidhisaarAI" style="color: #333366; text-decoration: none;">
-                <img src="https://i.imgur.com/Ax67KXb.png" alt="X (Twitter)" style="width: 32px; height: 32px;">
-              </a>
-              <a href="https://www.linkedin.com/company/vidhisaarai/" style="color: #333366; text-decoration: none;">
-                <img src="https://i.imgur.com/RGHdieR.png" alt="LinkedIn" style="width: 32px; height: 32px;">
+                <img src="https://i.imgur.com/kIYBdoj.png" alt="X (Twitter)" style="width: 32px; height: 32px;">
               </a>
             </div>
           </div>
