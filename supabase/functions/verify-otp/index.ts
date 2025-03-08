@@ -1,4 +1,3 @@
-
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.32.0";
@@ -157,7 +156,7 @@ serve(async (req) => {
             </a>
           </div>
           
-          <h2 style="text-align: center; margin-bottom: 20px; font-size: 28px; background: linear-gradient(to right, #000046, #1cb5e0); -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; background-clip: text;">Congratulations! You're on the Vidhisaar AI Waitlist.</h2>
+          <h2 style="text-align: center; margin-bottom: 20px; font-size: 28px; background: linear-gradient(to right top, #0001ee, #001ee8, #002be1, #0035da, #003dd2, #0d3cca, #153cc1, #1b3bb9, #2434af, #2a2ca5, #2d249c, #301c92); -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; background-clip: text;">Congratulations! You're on the Vidhisaar AI Waitlist.</h2>
           
           <div style="text-align: center; margin-bottom: 24px;">
             <img src="https://i.imgur.com/q2iDhbP.png" alt="Vidhisaar Banner" style="max-width: 100%; height: auto;">
