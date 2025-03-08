@@ -157,7 +157,7 @@ serve(async (req) => {
             </a>
           </div>
           
-          <h2 style="text-align: center; margin-bottom: 20px; font-size: 28px; background: linear-gradient(to right, #0f0c29, #302b63, #24243e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Congratulations!! You're on the Vidhisaar AI Waitlist.</h2>
+          <h2 style="text-align: center; margin-bottom: 20px; font-size: 28px; background: linear-gradient(to right, #0f0c29, #302b63, #24243e); -webkit-background-clip: text; color: transparent; -webkit-text-fill-color: transparent; background-clip: text;">Congratulations! You're on the Vidhisaar AI Waitlist.</h2>
           
           <div style="text-align: center; margin-bottom: 24px;">
             <img src="https://i.imgur.com/q2iDhbP.png" alt="Vidhisaar Banner" style="max-width: 100%; height: auto;">
