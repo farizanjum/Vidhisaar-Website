@@ -131,7 +131,7 @@ serve(async (req) => {
               Azamgarh, Uttar Pradesh, India 276121
             </p>
             <p style="font-size: 12px; color: #666;">
-              &copy; 2025 Vidhisaar. All rights reserved.
+              &copy; 2025 Vidhisaar AI. All rights reserved.
             </p>
           </div>
         </div>
