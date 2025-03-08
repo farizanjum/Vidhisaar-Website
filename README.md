@@ -1,18 +1,6 @@
-# Welcome to your Lovable project
-
-## Project info
-
-**URL**: https://lovable.dev/projects/3524eb2b-cada-4643-aa8e-9431fa25bc14
+website for Vidhisaar AI, that leverages multi-agent intelligence, blockchain, and explainable AI to provide transparent, unbiased, and verifiable legal insights—helping you make informed legal decisions with confidence.
 
 ## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/3524eb2b-cada-4643-aa8e-9431fa25bc14) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -59,11 +47,3 @@ This project is built with .
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/3524eb2b-cada-4643-aa8e-9431fa25bc14) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
