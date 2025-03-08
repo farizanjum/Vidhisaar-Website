@@ -146,7 +146,7 @@ serve(async (req) => {
 
     // Send confirmation email with improved design
     const emailResult = await resend.emails.send({
-      from: "Vidhisaar <updates@verification.vidhisaarai.in>",
+      from: "Vidhisaar AI <updates@verification.vidhisaarai.in>",
       to: [email],
       subject: "Welcome to the Vidhisaar AI Waitlist!",
       html: `
