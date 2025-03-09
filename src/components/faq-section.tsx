@@ -9,17 +9,17 @@ import {
 const faqs = [
   {
     id: "1",
-    title: "What is Vidhisaar?",
+    title: "What is Vidhisaar AI?",
     content: "Vidhisaar is an AI-powered legal assistant that combines multi-agent intelligence, blockchain, and explainable AI to provide transparent, unbiased, and verifiable legal insights.",
   },
   {
     id: "2",
-    title: "Is Vidhisaar available for use?",
-    content: "Not yet! Vidhisaar is currently in development. Join the waitlist to get early access and stay updated on our progress.",
+    title: "Is Vidhisaar AI available for use?",
+    content: "Not yet! Vidhisaar AI is currently in development. Join the waitlist to get early access and stay updated on our progress.",
   },
   {
     id: "3",
-    title: "How does Vidhisaar ensure accuracy in legal research?",
+    title: "How does Vidhisaar AI ensure accuracy in legal research?",
     content: "Vidhisaar uses AI-powered legal reasoning, retrieval-augmented generation (RAG), and blockchain-backed verification to provide reliable legal insights while ensuring fairness with xAI models.",
   },
   {
@@ -29,13 +29,13 @@ const faqs = [
   },
   {
     id: "5",
-    title: "Who can benefit from Vidhisaar?",
+    title: "Who can benefit from Vidhisaar AI?",
     content: "Vidhisaar is designed for lawyers, researchers, policymakers, students, and anyone seeking legal clarity with AI-driven insights and on-chain verification.",
   },
   {
     id: "6",
-    title: "Will Vidhisaar replace human lawyers?",
-    content: "No. Vidhisaar is designed to assist legal professionals, not replace them. It enhances research, speeds up case law retrieval, and ensures transparency, but human expertise remains essential.",
+    title: "Will Vidhisaar AI replace human lawyers?",
+    content: "No. Vidhisaar AI is designed to assist legal professionals, not replace them. It enhances research, speeds up case law retrieval, and ensures transparency, but human expertise remains essential.",
   },
   {
     id: "7",
