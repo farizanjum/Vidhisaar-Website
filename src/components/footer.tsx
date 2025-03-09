@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Linkedin, Instagram } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -28,16 +28,20 @@ export const Footer = () => {
                 <span className="sr-only">Linkedin</span>
               </a>
               <a 
-                href="https://www.instagram.com/vidhisaar" 
+                href="https://www.instagram.com/vidhisaar.ai" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <Instagram size={20} />
+                <img 
+                  src="https://i.imgur.com/FYQVrKR.png" 
+                  alt="Instagram" 
+                  className="w-5 h-5 filter brightness-75 hover:brightness-100 transition-all"
+                />
                 <span className="sr-only">Instagram</span>
               </a>
               <a 
-                href="https://twitter.com/vidhisaar" 
+                href="https://x.com/vidhisaarAI" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors"
