@@ -74,28 +74,27 @@ export const WaitlistForm = ({ onSuccess, onAlreadyWaitlisted }: WaitlistFormPro
   };
 
   return (
-    <div className="w-full max-w-md bg-black/30 backdrop-blur-md rounded-xl p-6 border border-white/10">
-      <h3 className="text-center text-white text-lg mb-4">Join the Waitlist</h3>
+    <>
       <Input
         type="email"
         placeholder="your@email.com"
-        className="w-full z-10 mb-4 md:mb-6 bg-white/10 border-white/20 text-white placeholder:text-white/50"
+        className="w-full max-w-md z-10 mb-4 md:mb-6"
         value={email}
         onChange={handleEmailChange}
         disabled={isSubmitting}
       />
       <FixedHoverButton 
-        className="text-white w-full"
+        className="text-white w-full max-w-md"
         height="48px"
         style={{
-          "--circle-start": "#000046",
-          "--circle-end": "#1cb5e0",
+          "--circle-start": "#6344F5",
+          "--circle-end": "#18CCFC",
         } as React.CSSProperties}
         onClick={handleSubmit}
         disabled={isSubmitting}
       >
         {isSubmitting ? "Sending..." : "Join Waitlist Now"}
       </FixedHoverButton>
-    </div>
+    </>
   );
 };
