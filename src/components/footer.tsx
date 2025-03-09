@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Linkedin, Instagram, Twitter } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -42,8 +42,12 @@ export const Footer = () => {
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
+                <img 
+                  src="https://i.imgur.com/vL8NQOG.png" 
+                  alt="X" 
+                  className="w-5 h-5 filter brightness-75 hover:brightness-100 transition-all"
+                />
+                <span className="sr-only">X</span>
               </a>
             </div>
           </div>
