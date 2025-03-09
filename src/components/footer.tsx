@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -19,12 +18,16 @@ export const Footer = () => {
             
             <div className="flex justify-center space-x-6 mt-5">
               <a 
-                href="https://www.linkedin.com/company/vidhisaar" 
+                href="https://www.linkedin.com/company/vidhisaarai/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <Linkedin size={20} />
+                <img 
+                  src="https://i.imgur.com/zZAZvrK.png" 
+                  alt="LinkedIn" 
+                  className="w-5 h-5 filter brightness-75 hover:brightness-100 transition-all"
+                />
                 <span className="sr-only">Linkedin</span>
               </a>
               <a 
