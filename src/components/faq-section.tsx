@@ -46,15 +46,17 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <div className="relative w-full max-w-4xl mx-auto py-12 md:py-16 z-10 faq-section px-4">
-      <h2 className="text-center text-xl sm:text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-white">FAQs</h2>
-      <Accordion type="single" collapsible className="w-full bg-black/50 backdrop-blur-sm" defaultValue="1">
+    <div className="relative w-full max-w-4xl mx-auto py-12 md:py-16 z-10 px-4">
+      <h2 className="text-center text-3xl md:text-4xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-[#000046] to-[#1cb5e0]">
+        Frequently Asked Questions
+      </h2>
+      <Accordion type="single" collapsible className="w-full bg-black/30 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden" defaultValue="1">
         {faqs.map((faq) => (
-          <AccordionItem value={faq.id} key={faq.id} className="py-2 border-white/20">
-            <AccordionTrigger className="py-2 text-[14px] sm:text-[15px] leading-6 hover:no-underline text-white text-left">
+          <AccordionItem value={faq.id} key={faq.id} className="border-white/10 py-1">
+            <AccordionTrigger className="px-4 md:px-6 py-4 text-[15px] md:text-base leading-6 hover:no-underline text-white font-medium text-left">
               {faq.title}
             </AccordionTrigger>
-            <AccordionContent className="pb-2 text-sm md:text-base text-white/80">
+            <AccordionContent className="px-4 md:px-6 pb-4 text-sm md:text-base text-white/80">
               {faq.content}
             </AccordionContent>
           </AccordionItem>
