@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Linkedin, Instagram, Twitter } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -12,8 +13,38 @@ export const Footer = () => {
               alt="Vidhisaar Logo" 
               className="w-24 sm:w-32 h-auto"
             />
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/30 to-transparent mt-3 relative overflow-hidden">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-white/30 to-transparent mt-3 mb-5 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-transparent animate-[pulse_2s_ease-in-out_infinite] w-1/2 left-0"></div>
+            </div>
+            
+            <div className="flex justify-center space-x-6 mt-5">
+              <a 
+                href="https://www.linkedin.com/company/vidhisaar" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Linkedin size={20} />
+                <span className="sr-only">Linkedin</span>
+              </a>
+              <a 
+                href="https://www.instagram.com/vidhisaar" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Instagram size={20} />
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a 
+                href="https://twitter.com/vidhisaar" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Twitter size={20} />
+                <span className="sr-only">Twitter</span>
+              </a>
             </div>
           </div>
           
