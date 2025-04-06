@@ -34,7 +34,7 @@ const GridItem = ({ area, icon, title, description, image }: GridItemProps) => {
               <img 
                 src={image} 
                 alt={title} 
-                className="h-12 w-auto object-contain"
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain"
               />
             </div>
             <div className="space-y-3">
@@ -58,12 +58,9 @@ export function FeaturesSection() {
   return (
     <div className="w-full bg-black py-16 md:py-24 relative z-10 px-4">
       <div className="container mx-auto">
-        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-8 text-white">
-          Features <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">That Matter</span>
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-white">
+          Features
         </h2>
-        <p className="text-center text-white/80 max-w-2xl mx-auto mb-12 text-base md:text-lg">
-          Vidhisaar combines cutting-edge technologies to provide innovative legal solutions that are transparent, unbiased, and accessible.
-        </p>
         
         <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-6 xl:max-h-[38rem] xl:grid-rows-2">
           <GridItem
