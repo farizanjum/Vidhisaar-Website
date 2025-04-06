@@ -5,6 +5,7 @@ import { TiltedScrollDemo } from "@/components/tilted-scroll-demo";
 import { PartnersSection } from "@/components/partners-section";
 import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
+import { FeaturesSection } from "@/components/features-section";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
@@ -26,6 +27,7 @@ const Index = () => {
         <h2 className="text-center text-lg sm:text-xl md:text-3xl font-bold mb-2 sm:mb-4 text-white relative z-10 px-2 sm:px-4">Key Features</h2>
         <TiltedScrollDemo />
       </div>
+      <FeaturesSection />
       <PartnersSection />
       <FAQSection />
       <WaitlistSection />
