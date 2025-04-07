@@ -86,17 +86,45 @@ const GlowingEffect = memo(
           const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
           const newAngle = currentAngle + angleDiff;
 
-          animate(currentAngle, newAngle, {
-            duration: movementDuration,
-            ease: [0.16, 1, 0.3, 1],
-            onUpdate: (value) => {
-              element.style.setProperty("--start", String(value));
-            },
-          });
+          // Changed this part: Use manual animation instead of the animate function
+          let startTime: number | null = null;
+          
+          function animateAngle(timestamp: number) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / (movementDuration * 1000), 1);
+            const ease = bezierEasing(0.16, 1, 0.3, 1, progress);
+            
+            const currentValue = currentAngle + angleDiff * ease;
+            element.style.setProperty("--start", String(currentValue));
+            
+            if (progress < 1) {
+              requestAnimationFrame(animateAngle);
+            }
+          }
+          
+          requestAnimationFrame(animateAngle);
         });
       },
       [inactiveZone, proximity, movementDuration]
     );
+
+    // Bezier easing function implementation
+    function bezierEasing(x1: number, y1: number, x2: number, y2: number, t: number): number {
+      // Simple cubic bezier curve implementation
+      const cx = 3 * x1;
+      const bx = 3 * (x2 - x1) - cx;
+      const ax = 1 - cx - bx;
+      
+      const cy = 3 * y1;
+      const by = 3 * (y2 - y1) - cy;
+      const ay = 1 - cy - by;
+      
+      const tCubed = t * t * t;
+      const tSquared = t * t;
+      
+      return ay * tCubed + by * tSquared + cy * t;
+    }
 
     useEffect(() => {
       if (disabled) return;
@@ -189,3 +217,4 @@ const GlowingEffect = memo(
 GlowingEffect.displayName = "GlowingEffect";
 
 export { GlowingEffect };
+
