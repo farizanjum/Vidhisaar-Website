@@ -1,11 +1,11 @@
 
 import { DemoHeroGeometric } from "@/components/demo-hero-geometric";
 import { WaitlistSection } from "@/components/waitlist/waitlist-section";
-import { TiltedScrollDemo } from "@/components/tilted-scroll-demo";
 import { PartnersSection } from "@/components/partners-section";
 import { FAQSection } from "@/components/faq-section";
 import { Footer } from "@/components/footer";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { FeaturesSection } from "@/components/features-section";
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -21,11 +21,7 @@ const Index = () => {
         />
       </div>
       <DemoHeroGeometric />
-      <div className="relative z-10 py-4 sm:py-8 bg-black">
-        <div className="absolute inset-0 bg-black opacity-100"></div>
-        <h2 className="text-center text-lg sm:text-xl md:text-3xl font-bold mb-2 sm:mb-4 text-white relative z-10 px-2 sm:px-4">Key Features</h2>
-        <TiltedScrollDemo />
-      </div>
+      <FeaturesSection />
       <PartnersSection />
       <FAQSection />
       <WaitlistSection />
