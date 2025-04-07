@@ -12,7 +12,7 @@ export function PartnersSection() {
       <p className="text-center text-base md:text-lg mb-6 md:mb-8 text-white/80 relative z-10">Used by the leaders</p>
       
       <div className="relative flex flex-col items-center justify-center w-full max-w-4xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
           <div className="relative w-full max-w-[160px] md:max-w-[200px] aspect-auto">
             <img 
               src="https://i.imgur.com/KLG1rBA.png" 
@@ -21,10 +21,18 @@ export function PartnersSection() {
             />
           </div>
           
-          <div className="relative w-full max-w-[160px] md:max-w-[200px] aspect-auto mt-6 md:mt-0">
+          <div className="relative w-full max-w-[160px] md:max-w-[200px] aspect-auto">
             <img 
               src="https://i.imgur.com/7ozyayR.png" 
               alt="Partner Logo" 
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          
+          <div className="relative w-full max-w-[160px] md:max-w-[200px] aspect-auto">
+            <img 
+              src="https://i.imgur.com/YhWqNFt.png" 
+              alt="Amazon AWS Logo" 
               className="w-full h-auto object-contain"
             />
           </div>

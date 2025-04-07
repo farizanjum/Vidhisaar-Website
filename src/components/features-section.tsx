@@ -21,7 +21,7 @@ const FeatureCard = ({ title, content, imageSrc }: FeatureCardProps) => {
       />
       <div className="relative flex flex-col h-full overflow-hidden rounded-xl border-[0.75px] border-gray-800 p-5 sm:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]">
         <div className="flex justify-center items-center mb-6">
-          <div className="w-16 h-16 flex items-center justify-center bg-black rounded-lg p-3">
+          <div className="w-24 h-24 flex items-center justify-center bg-black rounded-lg p-4">
             <img 
               src={imageSrc} 
               alt={title} 
@@ -66,7 +66,7 @@ export const FeaturesSection = () => {
     <section className="w-full py-16 bg-black">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-center text-4xl font-bold mb-16 text-white">Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
