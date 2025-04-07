@@ -18,17 +18,17 @@ const FeatureCard = ({ title, content, imageSrc }: FeatureCardProps) => {
         proximity={64}
         inactiveZone={0.01}
       />
-      <div className="relative flex flex-col h-full overflow-hidden rounded-xl border-[0.75px] border-gray-800 p-4 sm:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]">
-        <div className="mb-4 flex justify-center">
+      <div className="relative flex flex-col h-full overflow-hidden rounded-xl border-[0.75px] border-gray-800 p-5 sm:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]">
+        <div className="mb-5 flex justify-center">
           <img 
             src={imageSrc} 
             alt={title} 
-            className="w-full h-auto object-contain rounded-lg max-h-52" 
+            className="w-full h-auto object-contain rounded-lg max-h-56" 
           />
         </div>
-        <div className="space-y-2">
-          <h3 className="text-xl font-semibold text-white">{title}</h3>
-          <p className="text-gray-400">{content}</p>
+        <div className="space-y-2.5 text-center">
+          <h3 className="text-xl font-semibold text-white tracking-tight">{title}</h3>
+          <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{content}</p>
         </div>
       </div>
     </div>
@@ -60,10 +60,10 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="w-full py-12 bg-black">
-      <div className="container mx-auto px-4">
+    <section className="w-full py-16 bg-black">
+      <div className="container mx-auto px-6">
         <h2 className="text-center text-3xl font-bold mb-12 text-white">Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
