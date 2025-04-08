@@ -12,28 +12,34 @@ export function PartnersSection() {
       <p className="text-center text-base md:text-lg mb-6 md:mb-8 text-white/80 relative z-10">Used by the leaders</p>
       
       <div className="relative flex flex-col items-center justify-center w-full max-w-4xl mx-auto">
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-          <div className="relative w-full max-w-[160px] md:max-w-[200px] aspect-auto">
-            <img 
-              src="https://i.imgur.com/KLG1rBA.png" 
-              alt="Partner Logo" 
-              className="w-full h-auto object-contain"
-            />
-          </div>
-          
-          <div className="relative w-full max-w-[160px] md:max-w-[200px] aspect-auto">
-            <img 
-              src="https://i.imgur.com/7ozyayR.png" 
-              alt="Partner Logo" 
-              className="w-full h-auto object-contain"
-            />
-          </div>
-          
-          <div className="relative w-full max-w-[160px] md:max-w-[200px] aspect-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center w-full">
+          {/* AWS Logo first */}
+          <div className="relative w-full max-w-[140px] sm:max-w-[160px] md:max-w-[180px] aspect-auto flex items-center justify-center">
             <img 
               src="https://i.imgur.com/YhWqNFt.png" 
               alt="Amazon AWS Logo" 
               className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+          
+          {/* Dyne Research Logo second */}
+          <div className="relative w-full max-w-[140px] sm:max-w-[160px] md:max-w-[180px] aspect-auto flex items-center justify-center">
+            <img 
+              src="https://i.imgur.com/7ozyayR.png" 
+              alt="Dyne Research Logo" 
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
+          
+          {/* Kanoon Logo third */}
+          <div className="relative w-full max-w-[140px] sm:max-w-[160px] md:max-w-[180px] aspect-auto flex items-center justify-center">
+            <img 
+              src="https://i.imgur.com/KLG1rBA.png" 
+              alt="Kanoon Logo" 
+              className="w-full h-auto object-contain"
+              loading="lazy"
             />
           </div>
         </div>
