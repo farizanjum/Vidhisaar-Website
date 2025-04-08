@@ -21,7 +21,7 @@ const Index = () => {
         />
       </div>
       <DemoHeroGeometric />
-      <FeaturesSection />
+      <FeaturesSection className="py-12 sm:py-16 md:py-20" />
       <PartnersSection />
       <FAQSection />
       <WaitlistSection />

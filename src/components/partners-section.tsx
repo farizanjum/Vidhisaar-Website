@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useTheme } from "next-themes";
 import { Sparkles } from "@/components/ui/sparkles";
@@ -14,7 +13,7 @@ export function PartnersSection() {
       <div className="relative w-full max-w-4xl mx-auto">
         <div className="flex flex-row items-center justify-center gap-6 md:gap-12 w-full">
           {/* AWS Logo first */}
-          <div className="w-24 sm:w-28 md:w-40 flex items-center justify-center">
+          <div className="w-24 sm:w-28 md:w-48 flex items-center justify-center">
             <img 
               src="https://i.imgur.com/YhWqNFt.png" 
               alt="Amazon AWS Logo" 
@@ -24,7 +23,7 @@ export function PartnersSection() {
           </div>
           
           {/* Dyne Research Logo second */}
-          <div className="w-24 sm:w-28 md:w-40 flex items-center justify-center">
+          <div className="w-24 sm:w-28 md:w-48 flex items-center justify-center">
             <img 
               src="https://i.imgur.com/7ozyayR.png" 
               alt="Dyne Research Logo" 
@@ -34,7 +33,7 @@ export function PartnersSection() {
           </div>
           
           {/* Kanoon Logo third */}
-          <div className="w-24 sm:w-28 md:w-40 flex items-center justify-center">
+          <div className="w-24 sm:w-28 md:w-48 flex items-center justify-center">
             <img 
               src="https://i.imgur.com/KLG1rBA.png" 
               alt="Kanoon Logo" 
@@ -45,7 +44,7 @@ export function PartnersSection() {
         </div>
       </div>
       
-      <div className="relative -mt-12 h-48 sm:h-64 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
+      <div className="relative -mt-12 h-48 sm:h-64 w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent_70%)]">
         <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#8350e8,transparent_70%)] before:opacity-40" />
         <div className="absolute -left-1/2 top-1/2 aspect-[1/0.7] z-10 w-[200%] rounded-[100%] border-t border-zinc-900/20 dark:border-white/20 bg-black" />
         <Sparkles
@@ -58,4 +57,3 @@ export function PartnersSection() {
     </div>
   );
 }
-

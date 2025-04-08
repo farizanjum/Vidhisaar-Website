@@ -1,4 +1,3 @@
-
 import React from "react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Card } from "@/components/ui/card";
@@ -38,7 +37,7 @@ const FeatureCard = ({ title, content, imageSrc }: FeatureCardProps) => {
   );
 };
 
-export const FeaturesSection = () => {
+export const FeaturesSection = ({ className = "" }) => {
   const features = [
     {
       title: "AI-Powered Legal Strategy",
@@ -63,10 +62,10 @@ export const FeaturesSection = () => {
   ];
 
   return (
-    <section className="w-full py-20 bg-black">
+    <section className={`w-full ${className} bg-black`}>
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-center text-xl sm:text-2xl font-bold mb-16 text-white">Key Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 lg:max-w-6xl mx-auto">
+        <h2 className="text-center text-xl sm:text-2xl font-bold mb-10 text-white">Key Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 lg:max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
