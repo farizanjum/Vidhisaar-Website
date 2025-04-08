@@ -14,7 +14,7 @@ export function PartnersSection() {
       <div className="relative w-full max-w-4xl mx-auto">
         <div className="flex flex-row items-center justify-center gap-6 md:gap-12 w-full">
           {/* AWS Logo first */}
-          <div className="w-20 sm:w-24 md:w-28 flex items-center justify-center">
+          <div className="w-24 sm:w-28 md:w-40 flex items-center justify-center">
             <img 
               src="https://i.imgur.com/YhWqNFt.png" 
               alt="Amazon AWS Logo" 
@@ -24,7 +24,7 @@ export function PartnersSection() {
           </div>
           
           {/* Dyne Research Logo second */}
-          <div className="w-20 sm:w-24 md:w-28 flex items-center justify-center">
+          <div className="w-24 sm:w-28 md:w-40 flex items-center justify-center">
             <img 
               src="https://i.imgur.com/7ozyayR.png" 
               alt="Dyne Research Logo" 
@@ -34,7 +34,7 @@ export function PartnersSection() {
           </div>
           
           {/* Kanoon Logo third */}
-          <div className="w-20 sm:w-24 md:w-28 flex items-center justify-center">
+          <div className="w-24 sm:w-28 md:w-40 flex items-center justify-center">
             <img 
               src="https://i.imgur.com/KLG1rBA.png" 
               alt="Kanoon Logo" 
@@ -58,3 +58,4 @@ export function PartnersSection() {
     </div>
   );
 }
+
