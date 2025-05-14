@@ -3,7 +3,7 @@ import { DemoHeroGeometric } from "@/components/demo-hero-geometric";
 import { WaitlistSection } from "@/components/waitlist/waitlist-section";
 import { PartnersSection } from "@/components/partners-section";
 import { FAQSection } from "@/components/faq-section";
-import { Footer } from "@/components/footer";
+import { Footer } from "@/components/ui/footer-section";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { FeaturesSection } from "@/components/features-section";
 
